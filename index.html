@@ -3,18 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOTR</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>LOTR-Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body>
-    <h1>Hello world!!!!</h1>
-    <p id='hdr'>Replace Me</p>
+    <h1>Lord of the Rings</h1><br>
+
+    <!-- <p id='hdr'>Replace Me</p>
     <p id='hds'>i will be appended</p>
     <p>Click the button to display an alert box.</p>
-    <button id="submit-btn">Try it</button>
+    <button id="test-btn">Try it</button> -->
 
+    <section id="character"></section>
+    <h2>- Characters -</h2> <!-- heroku app-->
+    <p> Shows the character bio, for eg: height, race, gender, birth, etc</p>
+    <input type='text' id='char-search' placeholder='enter full name e.g Aragorn'>
+    <button id="char-btn">Try it</button><br>
+    <ul id=char-lst>
+    </ul>
+    </section>
+
+    <section id="quote">
+    <h2>- Quotes -</h2> <!-- heroku app-->
+    <p>basically who says what</p>
+    <input type='text' id='quote-search' placeholder='dunno wat to put here...'>
+    <button id="quote-btn">Try it</button><br>
+    <ul id=quote-lst>
+    </ul><br>
+    </section>
+
+    <section id="film">
+    <h2>- Films -</h2> <!--omdb-->
+    <p>shows films info</p>
+    <select id = "film-search">
+        <option value = "tt0903624">An Unexpected Journey</option>
+        <option value = "tt1170358">The Desolation of Smaug</option>
+        <option value = "tt2310332">The Battle of the Five Armies</option>
+        <option value = "tt0120737">The Fellowship Of The Ring</option>
+        <option value = "tt0167261">The Two Towers</option>
+        <option value = "tt0167260">The Return Of The King</option>
+    </select>
+    <button id="film-btn">Try it</button>
+    <ul id=film-lst>
+    </ul><br>
+    </section>
+
+    <section id="book">
+    <h2>- Books</h2> <!--book depository-->
+    <p></p>
+    <select id = "book-search">
+        <option value = "ISBN:0261102214">1. The Hobbit</option>
+        <option value = "ISBN:0261102354">2. The Fellowship Of The Ring</option>
+        <option value = "ISBN:0261102362">3. The Two Towers</option>
+        <option value = "ISBN:0261102370">4. The Return Of The King</option>
+        <option value = "ISBN:0261102737">5. The Silmarillion</option>
+        <option value = "ISBN:0261103628">6. Unfinished Tales</option>
+        <option value = "ISBN:0395538106">7. Bilbo's Last Song</option>
+        <option value = "ISBN:039526801X">8. The Adventures of Tom Bombadil</option>
+        <option value = "ISBN:0007597339">9. The Children of Hurin</option>
+    </select>
+    <button id="book-btn">Try it</button>
+    <ul id="book-lst">i am book details. Replace me!</ul><br>
+    <div id="book-cover">i am book cover. Replace me too!</div><br>
+    <section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </body>
 </html>
