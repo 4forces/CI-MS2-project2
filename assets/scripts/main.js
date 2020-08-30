@@ -4,76 +4,92 @@ $(function () {
     //test script in console
     console.log("script console is working!!!");
 
-    //test script in alert
-    //alert("Hello! Script alert is working fine");
-
-    //buttons proper
-
-
-
-    //character listing - From heroku lotr API
+    //character listing - From restdb API
     $('#char-btn').on('click', function () {
         let char = $('#char-search').val();
         console.log("Character you have searched for: " + char);
+        // $('#char-lst').empty();
+        // $('#quote-title').empty();
+        // $('#quote-lst').empty();
+        $('h5').empty();
+        $('ul').empty();
+
         //alert("book-btn2 is working");//test button is working
-        $.ajax({
-            url: "https://the-one-api.dev/v2/character",
-            method: "GET",
-            headers: { "Authorization": "Bearer OIxYF3b197kZIyh6LWZx" },
-            data: { name: char },
-            dataType: "json",
-            success: function (data) {
-                $('ul').empty();
-                let d = data.docs[0];
-                // let id = d._id;
-                let height = d.height;
-                let race = d.race;
-                let gender = d.gender;
-                let birthDate = d.birth;
-                let spouse = d.spouse;
-                let deathDate = d.death;
-                let realm = d.realm;
-                let hairColor = d.hair;
-                let name = d.name;
-                let wikiUrl = d.wikiUrl;
 
-                $('#char-lst').append(`<ul><b>Name</b>: ${name}</ul>`);
-                $('#char-lst').append(`<ul><b>Spouse</b>: ${spouse}</ul>`);
-                $('#char-lst').append(`<ul><b>Height</b>: ${height}</ul>`);
-                $('#char-lst').append(`<ul><b>Race</b>: ${race}</ul>`);
-                $('#char-lst').append(`<ul><b>Gender</b>: ${gender}</ul>`);
-                $('#char-lst').append(`<ul><b>Year of birth</b>: ${birthDate}</ul>`);
-                $('#char-lst').append(`<ul><b>Year of death</b>: ${deathDate}</ul>`);
-                $('#char-lst').append(`<ul><b>Realm</b>: ${realm}</ul>`);
-                $('#char-lst').append(`<ul><b>Hair Color</b>: ${hairColor}</ul>`);
-                $('#char-lst').append(`<ul><b>Wiki Link</b>: <a href="${wikiUrl}" target="_blank">Click here.</a></ul>`);
+        //axios call
+        axios({
+            method: 'get',
+            url: "https://lotrings-7150.restdb.io/rest/char-info",
+            headers: {'x-apikey': '5f4733fc3abd4e679e244cbf'},
+            params: {
+                q: { "Name": char }
+            }
+        })
+            .then(function (response) {
+                // handle success
+                // let d = data.docs[0];
+                console.log(response.data[0].data)
+                let race = response.data[0].race;
+                let gender = response.data[0].gender;
+                let birthDate = response.data[0].birth;
+                let deathDate = response.data[0].death;
+                let name = response.data[0].Name;
+                let url = response.data[0].Url;
 
-
-                // //using $.each() method
-                // let charDetail = data.docs[0];
-                // // data = entire JSON, item's first element in array [0].
-                // console.log("charDetail retrieved: "+charDetail);
-                // $.each(charDetail, function(key, value){
-                // console.log(key + ":" + value);
-                // $('#char-lst').append(`<b>${key}</b>: ${value}<br>`);
-                // });
-            },
-            error: function (xhr) {
-                alert("Error");
-            },
-        });
+                $('#char-lst').append(`<li><b>Name</b>: ${name}</li>`);
+                $('#char-lst').append(`<li><b>Race</b>: ${race}</li>`);
+                $('#char-lst').append(`<li><b>Gender</b>: ${gender}</li>`);
+                $('#char-lst').append(`<li><b>Date of birth</b>: ${birthDate}</li>`);
+                $('#char-lst').append(`<li><b>Date of death</b>: ${deathDate}</li>`);
+                $('#char-lst').append(`<li><b>Wiki Link</b>: <a href="${url}" target="_blank">${url}</a></li>`);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
     });
 
 
+    // Character Quotes -restdb API
+    $('#char-btn').on('click', function () {
+        let char = $('#char-search').val();
+        //alert("book-btn2 is working");//test button is working
+        //axios call
+        axios({
+            method: 'get',
+            url: "https://lotrp2-7ba7.restdb.io/rest/quote",
+            headers: {'x-apikey': '5f4a6a473abd4e679e244db8'},
+            params: {
+                q: { "character": char }
+            }
+        })
+            .then(function (response) {
+                // handle succ  ess
+                $('#quote-title').append("Quotes");
+                console.log(response.data)
 
-    //book listing - from openlibrary API
+                for(let i = 0; i < 3; i++) {
+                let quote1 = response.data[i].dialog;
+                let qmovie1 = response.data[i].movie;
+                $('#quote-lst').append(`<li><b>Dialog: </b>${quote1}</li>`);
+                $('#quote-lst').append(`<li><b>Movie: </b>${qmovie1}</li><br>`);
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    });
+
+    //book listing - from restdb.io API using Axios
     $('#book-btn').on('click', function () {
         let bookVal = $('#book-search').val();
         console.log("book value selected: " + bookVal);
-
-        //ajax call for book details
-
-        //restdb.io API using Axios
+        // $("#book-lst").empty();
+        // $('#book-cover').empty();
+        $('h5').empty();
+        $('ul').empty();
+        //axios call for book details
         axios({
             method: 'get',
             url: "https://lotrings-7150.restdb.io/rest/book-info",
@@ -84,17 +100,86 @@ $(function () {
         })
             .then(function (response) {
                 // handle success
-                // console.log(response.data[0].title);
                 let title = response.data[0].title;
                 let author = response.data[0].author;
                 let firstPublish = response.data[0].firstPublish;
                 let synopsis = response.data[0].synopsis;
                 let description = response.data[0].description;
-                $('#book-lst').append(`<ul><b>Title: </b>${title}</ul>`);
-                $('#book-lst').append(`<ul><b>Author: </b>${author}</ul>`);
-                $('#book-lst').append(`<ul><b>Description: </b>${description}</ul>`);
-                $('#book-lst').append(`<ul><b>First published: </b>${firstPublish}</ul>`);
-                $('#book-lst').append(`<ul><b>Synopsis: </b>${synopsis}</ul>`);
+                $('#book-lst').append(`<li><b>Title: </b>${title}</li>`);
+                $('#book-lst').append(`<li><b>Author: </b>${author}</li>`);
+                $('#book-lst').append(`<li><b>Description: </b>${description}</li>`);
+                $('#book-lst').append(`<li><b>First published: </b>${firstPublish}</li>`);
+                $('#book-lst').append(`<li><b>Synopsis: </b>${synopsis}</li>`);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+
+        //Book cover from OpenLibrary
+        console.log('book cover value selected: ' + bookVal)
+        $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
+    });
+
+
+
+    //film listing - from omdb
+    $('#film-btn').on('click', function () {
+        let filmVal = $('#film-search').val();
+        console.log("film selected: " + filmVal);
+        // $("#film-lst").empty();
+        // $('#filmRating-lst').empty()
+        $('h5').empty();
+        $('ul').empty();
+
+        //axios call for book details
+        axios({
+            method: 'get',
+            url: "http://www.omdbapi.com/",
+            params: {
+                apikey: "9c84f680",
+                i: filmVal,
+            }
+        })
+            .then(function (response) {
+                // handle success
+                console.log(response.data);
+                let poster = response.data.Poster;
+                let title = response.data.Title;
+                let rated = response.data.Rated;
+                let released = response.data.Released;
+                let runtime = response.data.Runtime;
+                let genre = response.data.Genre;
+                let director = response.data.Director;
+                let writer = response.data.Writer;
+                let actors = response.data.Actors;
+                let plot = response.data.Plot;
+                let awards = response.data.Awards;
+
+                let awdImdbSrc= response.data.Ratings[0].Source;
+                let awdImdbVal= response.data.Ratings[0].Value;
+                let awdRtSrc= response.data.Ratings[1].Source;
+                let awdRtVal = response.data.Ratings[1].Value;
+                let awdMcSrc= response.data.Ratings[2].Source;
+                let awdMcVal = response.data.Ratings[2].Value;
+
+                $('#film-lst').append(`<img src="${poster}"></img>`);
+                $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
+                $('#film-lst').append(`<li><b>Rated:</b> ${rated}</li>`);
+                $('#film-lst').append(`<li><b>Released:</b> ${released}</li>`);
+                $('#film-lst').append(`<li><b>Runtime:</b> ${runtime}</li>`);
+                $('#film-lst').append(`<li><b>Genre:</b> ${genre}</li>`);
+                $('#film-lst').append(`<li><b>Director:</b> ${director}</li>`);
+                $('#film-lst').append(`<li><b>Writer:</b> ${writer}</li>`);
+                $('#film-lst').append(`<li><b>Cast:</b> ${actors}</li>`);
+                $('#film-lst').append(`<li><b>Plot:</b> ${plot}</li>`);
+                $('#film-lst').append(`<li><b>Awards:</b> ${awards}</li>`);
+
+                console.log(`${awdImdbSrc}:${awdImdbVal}`);
+                $('#rating-title').append("Ratings");
+                $('#filmRating-lst').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
+                $('#filmRating-lst').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
+                $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
 
 
             })
@@ -103,86 +188,6 @@ $(function () {
                 console.log(error);
             })
 
-        // OpenLibrary API
-        // $.ajax({
-        //     url: 'https://openlibrary.org/api/books?' + bookVal + "&jscmd=details&format=json",
-        //     method: "GET",
-        //     data: { "bibkeys": bookVal },
-        //     dataType: "json",
-        //     success: function (data) {
-        //         $('#book-lst').empty();
-
-        //         let title = data[bookVal].details.title;
-        //         let subtitle = data[bookVal].details.subtitle;
-        //         let author = data[bookVal].details.authors[0].name;
-        //         let bookDesc = data[bookVal].details.description;
-        //         let copyrightDate = data[bookVal].details.copyright_date;
-        //         let series = data[bookVal].details.series;
-        //         $('#book-lst').append(`<ul><b>Title: </b>${title},<span style="color:black"><em>${subtitle}</em></span></ul>`);
-        //         $('#book-lst').append(`<ul><b>By: </b>${author}</ul>`);
-        //         $('#book-lst').append(`<ul>Part of ${series} series.</ul>`);
-        //         $('#book-lst').append(`<ul><b>Book summary: </b>${bookDesc}</ul>`);
-        //         $('#book-lst').append(`<ul><b>First published: </b>${copyrightDate}</ul>`);
-
-        //         // data = entire JSON, item's first element in array [0].
-        //         //console.log("bookDetail retrieved: " + bookDetail)
-        //         //$('#book-lst').replaceWith(`<br>${bookDetail}`);
-        //     },
-        //     error: function (xhr) {
-        //         alert("Book Details Retrieve Error");
-        //     },
-
-        // });
-
-        //ajax call for book cover
-        //let bookCov = bookVal.slice(5);
-        console.log('book cover value selected: ' + bookVal)
-        $('#book-cover').empty();
-        $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
-        // $.ajax({
-        //     url: 'http://covers.openlibrary.org/b/isbn/' + bookCov + "-L.jpg",
-        //     //method: "GET",
-        //     //data: {"bibkeys": bookVal},
-        //     //dataType: "json",
-        //     success: function(data) {
-        //         $('#book-cover').empty();
-        //         // data = entire JSON, item's first element in array [0].
-        //         $('#book-cover').replaceWith(`<div id="book-cov">Book Cover: ${bookCov}</div><br>`);
-        //     },
-        //     error: function(xhr) {
-        //          alert("Book Cover Retrieve Error");
-        //     },
-
-        // });
-    });
-
-
-
-    //film listing - from omdb
-    $('#film-btn').on('click', function () {
-        let film = $('#film-search').val();
-        console.log("Film you have selected: " + film);
-        //alert("book-btn2 is working");//test button is working
-        $.ajax({
-            url: "https://www.omdbapi.com/",
-            method: "GET",
-            data: { "s": film, "apiKey": "9c84f680" },
-            dataType: "json",
-            success: function (data) {
-                $('ul').empty();
-                let charDetail = data.docs[0];
-                // data = entire JSON, item's first element in array [0].
-                console.log("charDetail retrieved: " + charDetail)
-
-                $.each(charDetail, function (key, value) {
-                    console.log(key + ":" + value);
-                    $('#char-lst').append(`<b>${key}</b>: ${value}<br>`);
-                });
-            },
-            error: function (xhr) {
-                alert("Error");
-            },
-        });
     });
 
 });

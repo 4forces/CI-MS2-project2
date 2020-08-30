@@ -18,19 +18,15 @@
     <section id="character"></section>
     <h2>- Characters -</h2> <!-- heroku app-->
     <p> Shows the character bio, for eg: height, race, gender, birth, etc</p>
-    <input type='text' id='char-search' placeholder='enter full name e.g Aragorn'>
+    <input type='text' id='char-search' placeholder='enter name e.g Gandalf, Legolas, Gimli'>
     <button id="char-btn">Try it</button><br>
-    <ul id=char-lst>
+    <ul id='char-lst'>
     </ul>
-    </section>
-
-    <section id="quote">
-    <h2>- Quotes -</h2> <!-- heroku app-->
-    <p>basically who says what</p>
-    <input type='text' id='quote-search' placeholder='dunno wat to put here...'>
-    <button id="quote-btn">Try it</button><br>
-    <ul id=quote-lst>
-    </ul><br>
+    <div>
+        <h5 id='quote-title'></h5>
+        <ul id='quote-lst'>
+        </ul><br>
+    </div>
     </section>
 
     <section id="film">
@@ -45,8 +41,13 @@
         <option value = "tt0167260">The Return Of The King</option>
     </select>
     <button id="film-btn">Try it</button>
-    <ul id=film-lst>
+    <ul id='film-lst'>
     </ul><br>
+    <div>
+    <h5 id='rating-title'></h5>
+    <ul id='filmRating-lst'>
+    </ul><br>
+    </div>
     </section>
 
     <section id="book">
@@ -66,7 +67,7 @@
     </select>
     <button id="book-btn">Try it</button>
     <ul id="book-lst"></ul><br>
-    <div id="book-cover">i am book cover. Replace me too!</div><br>
+    <div id="book-cover"></div><br>
     <section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
