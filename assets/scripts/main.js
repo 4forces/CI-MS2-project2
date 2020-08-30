@@ -41,7 +41,7 @@ $(function () {
                 $('#char-lst').append(`<li><b>Gender</b>: ${gender}</li>`);
                 $('#char-lst').append(`<li><b>Date of birth</b>: ${birthDate}</li>`);
                 $('#char-lst').append(`<li><b>Date of death</b>: ${deathDate}</li>`);
-                $('#char-lst').append(`<li><b>Wiki Link</b>: <a href="${url}" target="_blank">${url}</a></li>`);
+                $('#char-lst').append(`<li><b>More info</b>: <a href="${url}" target="_blank">${url}</a></li>`);
             })
             .catch(function (error) {
                 // handle error
@@ -64,16 +64,24 @@ $(function () {
             }
         })
             .then(function (response) {
-                // handle succ  ess
-                $('#quote-title').append("Quotes");
+                // handle success
+                $('#quote-title').append("Quotes from the movies");
+                $('#quote-explain').append("");
                 console.log(response.data)
 
-                for(let i = 0; i < 3; i++) {
-                let quote1 = response.data[i].dialog;
-                let qmovie1 = response.data[i].movie;
-                $('#quote-lst').append(`<li><b>Dialog: </b>${quote1}</li>`);
-                $('#quote-lst').append(`<li><b>Movie: </b>${qmovie1}</li><br>`);
-                }
+                let lgth = response.data.length;
+
+                let randomLgth = Math.floor((Math.random() * lgth));
+                console.log('randomLgth= ' + l);
+
+                for(let i = randomlgth; i < randomlgth + 3; i++) {
+                    console.log('i= '+ i);
+                    let quote = response.data[i].dialog;
+                    let qMovie = response.data[i].movie;
+                    $('#quote-lst').append(`<li><b>Dialog: </b>${quote}</li>`);
+                    $('#quote-lst').append(`<li><b>Movie: </b>${qMovie}</li><br>`);
+                    }
+
             })
             .catch(function (error) {
                 // handle error
