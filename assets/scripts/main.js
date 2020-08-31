@@ -72,16 +72,15 @@ $(function () {
                 let lgth = response.data.length;
 
                 let randomLgth = Math.floor((Math.random() * lgth));
-                console.log('randomLgth= ' + l);
+                console.log('randomLgth= ' + lgth);
 
-                for(let i = randomlgth; i < randomlgth + 3; i++) {
+                for(let i = randomLgth; i < randomLgth + 3; i++) {
                     console.log('i= '+ i);
                     let quote = response.data[i].dialog;
                     let qMovie = response.data[i].movie;
                     $('#quote-lst').append(`<li><b>Dialog: </b>${quote}</li>`);
                     $('#quote-lst').append(`<li><b>Movie: </b>${qMovie}</li><br>`);
                     }
-
             })
             .catch(function (error) {
                 // handle error
