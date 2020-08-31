@@ -96,6 +96,10 @@ $(function () {
         // $('#book-cover').empty();
         $('h5').empty();
         $('ul').empty();
+        //Book cover from OpenLibrary
+        console.log('book cover value selected: ' + bookVal)
+        $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
+
         //axios call for book details
         axios({
             method: 'get',
@@ -123,9 +127,6 @@ $(function () {
                 console.log(error);
             })
 
-        //Book cover from OpenLibrary
-        console.log('book cover value selected: ' + bookVal)
-        $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
     });
 
 
