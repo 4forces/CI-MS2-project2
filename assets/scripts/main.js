@@ -199,4 +199,72 @@ $(function () {
 
     });
 
+    // film method 2 modal test
+    $('#myModal').on('show.bs.modal', function (e) {
+        let button = $(e.relatedTarget);
+        let filmVal = button.attr('data-id');
+        console.log("film selected by modal method: " + filmVal);
+        // $("#film-lst").empty();
+        // $('#filmRating-lst').empty()
+        $('h5').empty();
+        $('ul').empty();
+
+        //axios call for book details
+        axios({
+            method: 'get',
+            url: "http://www.omdbapi.com/",
+            params: {
+                apikey: "9c84f680",
+                i: filmVal,
+            }
+        })
+            .then(function (response) {
+                // handle success
+                console.log(response.data);
+                let poster = response.data.Poster;
+                let title = response.data.Title;
+                let rated = response.data.Rated;
+                let released = response.data.Released;
+                let runtime = response.data.Runtime;
+                let genre = response.data.Genre;
+                let director = response.data.Director;
+                let writer = response.data.Writer;
+                let actors = response.data.Actors;
+                let plot = response.data.Plot;
+                let awards = response.data.Awards;
+
+                let awdImdbSrc= response.data.Ratings[0].Source;
+                let awdImdbVal= response.data.Ratings[0].Value;
+                let awdRtSrc= response.data.Ratings[1].Source;
+                let awdRtVal = response.data.Ratings[1].Value;
+                let awdMcSrc= response.data.Ratings[2].Source;
+                let awdMcVal = response.data.Ratings[2].Value;
+
+                $('#film-lst2').append(`<img src="${poster}"></img>`);
+                $('#film-lst2').append(`<li><b>Title:</b> ${title}</li>`);
+                $('#film-lst2').append(`<li><b>Rated:</b> ${rated}</li>`);
+                $('#film-lst2').append(`<li><b>Released:</b> ${released}</li>`);
+                $('#film-lst2').append(`<li><b>Runtime:</b> ${runtime}</li>`);
+                $('#film-lst2').append(`<li><b>Genre:</b> ${genre}</li>`);
+                $('#film-lst2').append(`<li><b>Director:</b> ${director}</li>`);
+                $('#film-lst2').append(`<li><b>Writer:</b> ${writer}</li>`);
+                $('#film-lst2').append(`<li><b>Cast:</b> ${actors}</li>`);
+                $('#film-lst2').append(`<li><b>Plot:</b> ${plot}</li>`);
+                $('#film-lst2').append(`<li><b>Awards:</b> ${awards}</li>`);
+
+                console.log(`${awdImdbSrc}:${awdImdbVal}`);
+                $('#rating-title2').append("Ratings");
+                $('#filmRating-lst2').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
+                $('#filmRating-lst2').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
+                $('#filmRating-lst2').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
+
+
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    });
+
+
 });
