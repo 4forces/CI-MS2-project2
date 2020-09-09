@@ -12,7 +12,7 @@ $(function () {
         // $('#quote-title').empty();
         // $('#quote-lst').empty();
         $('h5').empty();
-        $('ul').empty();
+        $('.list-contents').empty();
 
         //alert("book-btn2 is working");//test button is working
 

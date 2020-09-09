@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
             <li class="nav-item"><a class="nav-link" href="#films">Films</a></li>
-            <li class="nav-item"><a class="nav-link" href="#chars">Characters</a></li>
+            <li class="nav-item"><a class="nav-link" href="#characters">Characters</a></li>
             <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
         </ul>
     </div>
@@ -61,13 +61,15 @@
 
 <!-- Films Section -->
     <section id="films" class="page-section bg-primary">
-        <div class="container">
+         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">Films</h2>
-                    <hr class="divider light my-4" />
-                    <p class="text-white-50 mb-4"><b>Select a film and press "Go!"</b></p>
-                        <select id="film-search">
+                        <p class="text-white-50 mb-4"><b>Select a film.</b></p>
+                        <hr class="divider light my-4" />
+
+
+                        <!-- <select id="film-search">
                             <option value="tt0903624">An Unexpected Journey</option>
                             <option value="tt1170358">The Desolation of Smaug</option>
                             <option value="tt2310332">The Battle of the Five Armies</option>
@@ -76,16 +78,16 @@
                             <option value="tt0167260">The Return Of The King</option>
                         </select>
                     <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button>
-                    <ul class="list-group" id='film-lst'>
+                    <ul class="list-inline list-contents" id='film-lst'>
                         </ul><br>
                     <div>
                         <h5 id='rating-title'></h5>
-                        <ul id='filmRating-lst'>
+                        <ul class='lists-contents' id='filmRating-lst'>
                         </ul><br>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div>  -->
 
 
             <!-- films image to modal testing -->
@@ -94,7 +96,7 @@
 
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt0903624">
-                            <img class="img-fluid" src="assets/img/htuj.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/htuj.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Hobbit:</div>
@@ -104,7 +106,7 @@
 
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt1170358">
-                            <img class="img-fluid" src="assets/img/htdos.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/htdos.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Hobbit:</div>
@@ -114,7 +116,7 @@
 
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt2310332">
-                            <img class="img-fluid" src="assets/img/htbofa.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/htbofa.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Hobbit:</div>
@@ -124,7 +126,7 @@
 
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt0120737">
-                            <img class="img-fluid" src="assets/img/ltfotr.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/ltfotr.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Lord Of The Rings:</div>
@@ -134,7 +136,7 @@
 
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt0167261">
-                            <img class="img-fluid" src="assets/img/lttt.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/lttt.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Lord Of The Rings:</div>
@@ -144,7 +146,7 @@
 
                     <div class="col-lg-4 col-sm-6">
                         <a href="#" class="portfolio-link" data-toggle="modal" data-target="#myModal" data-id="tt0167260">
-                            <img class="img-fluid" src="assets/img/lrotk.jpg" width="200" alt="" />
+                            <img class="img-fluid" src="assets/img/lrotk2.jpg" width="100" alt="" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">The Lord Of The Rings</div>
@@ -152,28 +154,34 @@
                         </div>
                     </div>
 
-                </div>
+                </div> <!-- <div class="row justify-content-center"> -->
             </div>
-
-
 
     </section>
 
 <!-- Characters Section -->
-    <section id="character">
-        <h2>- Characters -</h2> <!-- heroku app-->
-        <p> Shows the character bio, for eg: height, race, gender, birth, etc</p>
-        <input type='text' id='char-search' placeholder='enter name e.g Gandalf, Legolas, Gimli'>
-        <button id="char-btn">Try it</button><br>
-        <ul id='char-lst'>
-        </ul>
-        <div>
-            <h5 id='quote-title'></h5>
-            <em><span id='quote-explain'></span></em>
-            <ul id='quote-lst'>
-            </ul><br>
+    <section id="characters" class="page-section bg-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+
+                    <h2 class=text-white mt-0> Characters </h2> <!-- heroku app-->
+                    <p class="text-white-50 mb-4"><b>Enter a name e.g Gandalf, Gimli, Legolas</b></p>
+                    <input type='text' id='char-search' placeholder='e.g Gandalf'>
+                    <button class="btn btn-light btn-xl" id="char-btn">Go!</button>
+                    <hr class="divider light my-4" />
+                    <ul class="list-inline text-white list-contents" id='char-lst'>
+                    </ul>
+                    <div>
+                        <h5 id='quote-title text-white'></h5>
+                        <em><span id='quote-explain'></span></em>
+                        <ul class="list-inline text-white list-contents" id='quote-lst'>
+                        </ul><br>
+                    </div>
+                </div>
+            </div>
         </div>
-        </section>
+    </section>
 
 <!-- Books section -->
     <section id="books">
@@ -193,7 +201,7 @@
     </select>
     <button id="book-btn">Try it</button>
     <div id="book-cover"></div><br>
-    <ul id="book-lst"></ul><br>
+    <ul id="book-lst list-contents"></ul><br>
     <section>
 
     <!--  Modals for film -->
