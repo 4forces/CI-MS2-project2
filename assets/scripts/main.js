@@ -13,6 +13,7 @@ $(function () {
         // $('#quote-lst').empty();
         $('h5').empty();
         $('.list-contents').empty();
+        $('#book-cover').empty();
 
         //alert("book-btn2 is working");//test button is working
 
@@ -95,7 +96,7 @@ $(function () {
         // $("#book-lst").empty();
         // $('#book-cover').empty();
         $('h5').empty();
-        $('ul').empty();
+        $('.list-contents').empty();
         $('#book-cover').empty();
         //Book cover from OpenLibrary
         console.log('book cover value selected: ' + bookVal)
@@ -139,7 +140,8 @@ $(function () {
         // $("#film-lst").empty();
         // $('#filmRating-lst').empty()
         $('h5').empty();
-        $('ul').empty();
+        $('.list-contents').empty();
+        $('#book-cover').empty();
 
         //axios call for book details
         axios({
@@ -207,7 +209,8 @@ $(function () {
         // $("#film-lst").empty();
         // $('#filmRating-lst').empty()
         $('h5').empty();
-        $('ul').empty();
+        $('.list-contents').empty();
+        $('#book-cover').empty();
 
         //axios call for book details
         axios({

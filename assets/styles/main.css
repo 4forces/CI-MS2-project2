@@ -24,6 +24,12 @@ body {
     border-radius: 50px;
 }
 
+.btn-primary:hover {
+    color: #fff;
+    background-color: #f24516;
+    border-color: #ee3e0d;
+}
+
 .btn-xl {
     padding: 1.25rem 2.25rem;
     font-size: 0.85rem;
@@ -31,12 +37,13 @@ body {
     text-transform: uppercase;
     border: none;
     border-radius: 10rem;
+    margin: 1rem;
 }
 
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/bg-masthead.jpg");
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.3) 100%), url("../img/bg-masthead.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -47,8 +54,8 @@ header.masthead {
 #films {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
-    /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/char-shadow.jpg"); */
-    background-position: center;
+    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.6) 0%, rgba(187, 158, 137, 0.95) 100%), url("../img/balrog.jpg");
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -58,7 +65,17 @@ header.masthead {
 #characters {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/char-shadow.jpg");
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0) 0%, rgba(92, 77, 66, 0.7) 100%), url("../img/char-shadow.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#books {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.2) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/hero-frame.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -107,5 +124,17 @@ hr.light {
         min-height: 40rem;
         padding-top: 4.5rem;
         padding-bottom: 0;
+    }
+
+    #films {
+        height: 100vh;
+    }
+
+    #characters {
+        height: 100vh;
+    }
+
+    #books {
+        height: 100vh;
     }
 }

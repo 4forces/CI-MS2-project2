@@ -61,37 +61,36 @@
 
 <!-- Films Section -->
     <section id="films" class="page-section bg-primary">
-         <div class="container">
-            <div class="row justify-content-center">
+         <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">Films</h2>
                         <p class="text-white-50 mb-4"><b>Select a film.</b></p>
                         <hr class="divider light my-4" />
 
-
-                        <!-- <select id="film-search">
+                        <select id="film-search">
                             <option value="tt0903624">An Unexpected Journey</option>
                             <option value="tt1170358">The Desolation of Smaug</option>
                             <option value="tt2310332">The Battle of the Five Armies</option>
                             <option value="tt0120737">The Fellowship Of The Ring</option>
                             <option value="tt0167261">The Two Towers</option>
                             <option value="tt0167260">The Return Of The King</option>
-                        </select>
+                        </select><br>
                     <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button>
                     <ul class="list-inline list-contents" id='film-lst'>
                         </ul><br>
                     <div>
                         <h5 id='rating-title'></h5>
-                        <ul class='lists-contents' id='filmRating-lst'>
+                        <ul class='list-inline list-contents' id='filmRating-lst'>
                         </ul><br>
-                    </div> -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div>  -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
             <!-- films image to modal testing -->
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row justify-content-center">
 
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -154,17 +153,16 @@
                         </div>
                     </div>
 
-                </div> <!-- <div class="row justify-content-center"> -->
-            </div>
+                </div>
+            </div> -->
 
     </section>
 
 <!-- Characters Section -->
     <section id="characters" class="page-section bg-secondary">
-        <div class="container">
-            <div class="row justify-content-center">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-lg-8 text-center">
-
                     <h2 class=text-white mt-0> Characters </h2> <!-- heroku app-->
                     <p class="text-white-50 mb-4"><b>Enter a name e.g Gandalf, Gimli, Legolas</b></p>
                     <input type='text' id='char-search' placeholder='e.g Gandalf'>
@@ -184,24 +182,31 @@
     </section>
 
 <!-- Books section -->
-    <section id="books">
-    <h2>- Books</h2>
-    <p></p>
-    <select id = "book-search">
-        <option value = "0261102214">1. The Hobbit</option>
-        <option value = "0261102354">2. The Fellowship Of The Ring</option>
-        <option value = "0261102362">3. The Two Towers</option>
-        <option value = "0261102370">4. The Return Of The King</option>
-        <option value = "0261102737">5. The Silmarillion</option>
-        <option value = "0261103628">6. Unfinished Tales</option>
-        <option value = "0395538106">7. Bilbo's Last Song</option>
-        <option value = "039526801X">8. The Adventures of Tom Bombadil</option>
-        <option value = "0007597339">9. The Children of Hurin</option>
-        <option value = "0007137435">10. The History of Middle-earth</option>
-    </select>
-    <button id="book-btn">Try it</button>
-    <div id="book-cover"></div><br>
-    <ul id="book-lst list-contents"></ul><br>
+    <section id="books" class="page-section bg-warning">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8 text center">
+                    <h2 class="text-white mt-0">Books</h2>
+                    <p class="text-white-50 mb-4"><b>Select a book.</b></p>
+                        <hr class="divider light my-4" />
+                        <select id = "book-search">
+                            <option value = "0261102214">1. The Hobbit</option>
+                            <option value = "0261102354">2. The Fellowship Of The Ring</option>
+                            <option value = "0261102362">3. The Two Towers</option>
+                            <option value = "0261102370">4. The Return Of The King</option>
+                            <option value = "0261102737">5. The Silmarillion</option>
+                            <option value = "0261103628">6. Unfinished Tales</option>
+                            <option value = "0395538106">7. Bilbo's Last Song</option>
+                            <option value = "039526801X">8. The Adventures of Tom Bombadil</option>
+                            <option value = "0007597339">9. The Children of Hurin</option>
+                            <option value = "0007137435">10. The History of Middle-earth</option>
+                        </select><br>
+                    <button class="btn btn-light btn-xl js-scroll-trigger" id="book-btn">Go!</button>
+                    <div id="book-cover"></div><br>
+                    <ul id="book-lst" class="list-contents list-inline"></ul><br>
+                </div>
+            </div>
+        </div>
     <section>
 
     <!--  Modals for film -->

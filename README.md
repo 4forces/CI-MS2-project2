@@ -60,6 +60,12 @@ https://www.wallpaperup.com/488965/Lord_of_the_Rings_Heroes_frame_from_the_movie
 https://wallpaperaccess.com/lotr-movie
 https://wall.alphacoders.com/big.php?i=434813
 
+https://wallpapersden.com/lord-of-the-rings-4k-wallpaper/1920x1080/
+https://wallpaperset.com/lord-of-the-rings-backgrounds
+
+https://wallpaperset.com/lord-of-the-rings-backgrounds
+
+
 __Fonts and Icons:__
 
 __Scripts:__
