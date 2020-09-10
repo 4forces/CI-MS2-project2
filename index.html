@@ -51,7 +51,7 @@
             <hr class="divider my-4" />
         </div>
         <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 font-weight-light mb-5"><b>The Films, Characters or Books.</b></p>
+            <p class="text-white-75 font-weight-light mb-5"><b>Films &bull; Characters &bull; Books</b></p>
             <a id='lets-go' class="btn btn-primary btn-xl" href="#films">Let's go!</a>
         </div>
     </div>
@@ -76,7 +76,10 @@
                             <option value="tt0167261">The Two Towers</option>
                             <option value="tt0167260">The Return Of The King</option>
                         </select><br>
-                    <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button>
+                    <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button><br>
+                    <div id="films-loader" class="spinner-grow text-secondary" role="status" style="display:none;">
+                        <span class="sr-only"></span>
+                    </div>
                     <ul class="list-inline list-contents" id='film-lst'>
                         </ul><br>
                     <div>
@@ -167,7 +170,10 @@
                     <p class="text-white-50 mb-4"><b>Enter a name e.g Gandalf, Gimli, Legolas</b></p>
                     <hr class="divider light my-4" />
                     <input type='text' id='char-search' placeholder='e.g Gandalf'><br>
-                    <button class="btn btn-light btn-xl" id="char-btn">Go!</button>
+                    <button class="btn btn-light btn-xl" id="char-btn">Go!</button><br>
+                    <div id="characters-loader" class="spinner-grow text-secondary" role="status" style="display:none;">
+                        <span class="sr-only"></span>
+                    </div>
                     <ul class="list-inline text-white list-contents" id='char-lst'>
                     </ul>
                     <div>
@@ -201,7 +207,10 @@
                             <option value = "0007597339">9. The Children of Hurin</option>
                             <option value = "0007137435">10. The History of Middle-earth</option>
                         </select><br>
-                    <button class="btn btn-light btn-xl js-scroll-trigger" id="book-btn">Go!</button>
+                    <button class="btn btn-light btn-xl js-scroll-trigger" id="book-btn">Go!</button><br>
+                    <div id="books-loader" class="spinner-grow text-secondary" role="status" style="display:none;">
+                        <span class="sr-only"></span>
+                    </div>
                     <div id="book-cover"></div><br>
                     <ul id="book-lst" class="list-contents list-inline"></ul><br>
                 </div>

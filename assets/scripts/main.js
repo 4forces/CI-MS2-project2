@@ -14,6 +14,7 @@ $(function () {
         $('h5').empty();
         $('.list-contents').empty();
         $('#book-cover').empty();
+        $('#characters-loader').show();
 
 
         //alert("book-btn2 is working");//test button is working
@@ -69,6 +70,9 @@ $(function () {
                 // handle success
                 $('#quote-title').append("Quotes from the movies");
                 $('#quote-explain').append("");
+
+                $('#characters-loader').hide();
+
                 console.log(response.data)
 
                 let lgth = response.data.length;
@@ -99,6 +103,7 @@ $(function () {
         $('h5').empty();
         $('.list-contents').empty();
         $('#book-cover').empty();
+        $('#books-loader').show();
         //Book cover from OpenLibrary
         console.log('book cover value selected: ' + bookVal)
         $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
@@ -119,6 +124,9 @@ $(function () {
                 let firstPublish = response.data[0].firstPublish;
                 let synopsis = response.data[0].synopsis;
                 let description = response.data[0].description;
+
+                $('#book-loader').hide();
+
                 $('#book-lst').append(`<li><b>Title: </b>${title}</li>`);
                 $('#book-lst').append(`<li><b>Author: </b>${author}</li>`);
                 $('#book-lst').append(`<li><b>Description: </b>${description}</li>`);
@@ -143,6 +151,7 @@ $(function () {
         $('h5').empty();
         $('.list-contents').empty();
         $('#book-cover').empty();
+        $('#films-loader').show();
 
         //axios call for book details
         axios({
@@ -174,6 +183,8 @@ $(function () {
                 let awdRtVal = response.data.Ratings[1].Value;
                 let awdMcSrc= response.data.Ratings[2].Source;
                 let awdMcVal = response.data.Ratings[2].Value;
+
+                $('#films-loader').hide();
 
                 $('#film-lst').append(`<img src="${poster}"></img>`);
                 $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
