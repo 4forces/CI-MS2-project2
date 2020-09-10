@@ -65,6 +65,12 @@ https://wallpaperset.com/lord-of-the-rings-backgrounds
 
 https://wallpaperset.com/lord-of-the-rings-backgrounds
 
+https://www.syfy.com/syfywire/russian-church-fights-construction-of-a-real-lotr-eye-of-sauron
+
+https://www.wallpapertip.com/wpic/TJRhRi_sauron-the-lord-of-the-rings-by-eduardoleon/
+https://shadowofwar.fandom.com/wiki/Mordor?file=Yre1o.jpg
+
+https://wallpapercave.com/w/wp1861654
 
 __Fonts and Icons:__
 

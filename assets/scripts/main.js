@@ -15,6 +15,7 @@ $(function () {
         $('.list-contents').empty();
         $('#book-cover').empty();
 
+
         //alert("book-btn2 is working");//test button is working
 
         //axios call
