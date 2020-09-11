@@ -5,76 +5,164 @@ $(function () {
     console.log("script console is working!!!");
 
 
-//film listing - from omdb
-$('#film-btn').on('click', function () {
-    let filmVal = $('#film-search').val();
-    console.log("film selected: " + filmVal);
-    // $("#film-lst").empty();
-    // $('#filmRating-lst').empty()
-    $('h5').empty();
-    $('.list-contents').empty();
-    $('#book-cover').empty();
-    $('#films-loader').show();
 
-    //axios call for book details
-    axios({
-        method: 'get',
-        url: "http://www.omdbapi.com/",
-        params: {
-            apikey: "9c84f680",
-            i: filmVal,
-        }
-    })
-        .then(function (response) {
-            // handle success
-            console.log(response.data);
-            let poster = response.data.Poster;
-            let title = response.data.Title;
-            let rated = response.data.Rated;
-            let released = response.data.Released;
-            let runtime = response.data.Runtime;
-            let genre = response.data.Genre;
-            let director = response.data.Director;
-            let writer = response.data.Writer;
-            let actors = response.data.Actors;
-            let plot = response.data.Plot;
-            let awards = response.data.Awards;
+    //film listing - from omdb
+    $('#film-btn').on('click', function () {
+        let filmVal = $('#film-search').val();
+        console.log("film selected: " + filmVal);
+        // $("#film-lst").empty();
+        // $('#filmRating-lst').empty()
+        $('h5').empty();
+        $('.list-contents').empty();
+        $('#book-cover').empty();
+        $('#films-loader').show();
 
-            let awdImdbSrc= response.data.Ratings[0].Source;
-            let awdImdbVal= response.data.Ratings[0].Value;
-            let awdRtSrc= response.data.Ratings[1].Source;
-            let awdRtVal = response.data.Ratings[1].Value;
-            let awdMcSrc= response.data.Ratings[2].Source;
-            let awdMcVal = response.data.Ratings[2].Value;
-
-            $('#films-loader').hide();
-
-            $('#film-lst').append(`<img src="${poster}"></img>`);
-            $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
-            $('#film-lst').append(`<li><b>Rated:</b> ${rated}</li>`);
-            $('#film-lst').append(`<li><b>Released:</b> ${released}</li>`);
-            $('#film-lst').append(`<li><b>Runtime:</b> ${runtime}</li>`);
-            $('#film-lst').append(`<li><b>Genre:</b> ${genre}</li>`);
-            $('#film-lst').append(`<li><b>Director:</b> ${director}</li>`);
-            $('#film-lst').append(`<li><b>Writer:</b> ${writer}</li>`);
-            $('#film-lst').append(`<li><b>Cast:</b> ${actors}</li>`);
-            $('#film-lst').append(`<li><b>Plot:</b> ${plot}</li>`);
-            $('#film-lst').append(`<li><b>Awards:</b> ${awards}</li>`);
-
-            console.log(`${awdImdbSrc}:${awdImdbVal}`);
-            $('#rating-title').append("Ratings");
-            $('#filmRating-lst').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
-            $('#filmRating-lst').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
-            $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
-
-
+        //axios call for book details
+        axios({
+            method: 'get',
+            url: "http://www.omdbapi.com/",
+            params: {
+                apikey: "9c84f680",
+                i: filmVal,
+            }
         })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
+            .then(function (response) {
+                // handle success
 
-});
+
+                console.log(response.data);
+                let poster = response.data.Poster;
+                let title = response.data.Title;
+                let rated = response.data.Rated;
+                let released = response.data.Released;
+                let runtime = response.data.Runtime;
+                let genre = response.data.Genre;
+                let director = response.data.Director;
+                let writer = response.data.Writer;
+                let actors = response.data.Actors;
+                let plot = response.data.Plot;
+                let awards = response.data.Awards;
+
+                let awdImdbSrc= response.data.Ratings[0].Source;
+                let awdImdbVal= response.data.Ratings[0].Value;
+                let awdRtSrc= response.data.Ratings[1].Source;
+                let awdRtVal = response.data.Ratings[1].Value;
+                let awdMcSrc= response.data.Ratings[2].Source;
+                let awdMcVal = response.data.Ratings[2].Value;
+
+                //Generate results on new page
+                $("#f-results-pg").addClass("filmResultClass");
+
+
+                let template = `
+                <div class='container'>
+                <div id='title' class='row justify-content-center m-3 text-center'>
+                    <h2 class="text-white">${title}<h2>
+                </div>
+
+                <div id='details' class='row justify-content-center'>
+                    <div class='col-sm-4'>
+                      <img src="${poster}" class="img-fluid img-thumbnail my-3" id="img-thumb">
+                    </div>
+
+                    <div class='col-sm-8'>
+                      <table class="table text-white">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Writers</th>
+                          <td>${writer}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Cast</th>
+                          <td>${actors}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Rated</th>
+                          <td>${rated}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Runtime</th>
+                          <td>${runtime}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Released</th>
+                          <td>${released}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Awards</th>
+                          <td>${awards}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class='row justify-content-center my-3'>
+                    <div class='text-white> <!-- only 1 col: plot title and content both included -->
+                      <h4 class="text-center">Plot</h4>
+                      <p id="plot-content" class="p-3 mx-3">${plot}</p>
+                    </div>
+                </div>
+
+
+                <div class='row justify-content-center'>
+                  <div id='title-ratings'>
+                    <h4 class="text-center text-white">Ratings</h4>
+                    <table class="table text-white">
+                      <tbody>
+                        <tr>
+                          <th scope="row">${awdImdbSrc}</th>
+                          <td>${awdImdbVal}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">${awdRtSrc}</th>
+                          <td>${awdRtVal}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">${awdMcSrc}</th>
+                          <td>${awdMcVal}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>`
+
+                $('#f-results-pg').html(template);
+
+                // $('#film-lst').append(`<img src="${poster}"></img>`);
+                // $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
+                // $('#film-lst').append(`<li><b>Rated:</b> ${rated}</li>`);
+                // $('#film-lst').append(`<li><b>Released:</b> ${released}</li>`);
+                // $('#film-lst').append(`<li><b>Runtime:</b> ${runtime}</li>`);
+                // $('#film-lst').append(`<li><b>Genre:</b> ${genre}</li>`);
+                // $('#film-lst').append(`<li><b>Director:</b> ${director}</li>`);
+                // $('#film-lst').append(`<li><b>Writer:</b> ${writer}</li>`);
+                // $('#film-lst').append(`<li><b>Cast:</b> ${actors}</li>`);
+                // $('#film-lst').append(`<li><b>Plot:</b> ${plot}</li>`);
+                // $('#film-lst').append(`<li><b>Awards:</b> ${awards}</li>`);
+
+                // console.log(`${awdImdbSrc}:${awdImdbVal}`);
+                // $('#rating-title').append("Ratings");
+                // $('#filmRating-lst').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
+                // $('#filmRating-lst').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
+                // $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
+
+                $('#films-loader').hide();
+                $('#f-results-pg')[0].scrollIntoView();
+
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+
+    });
+
+
+
+
 
 
 
@@ -287,3 +375,5 @@ $('#film-btn').on('click', function () {
 
 
 });
+
+

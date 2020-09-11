@@ -11,7 +11,7 @@ body {
     line-height: 1.5;
     color: #212529;
     /* color: rgb(161, 173, 192); */
-    text-align: left;
+    /* text-align: left; */
     background-color: #fff;
 }
 
@@ -63,6 +63,21 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+}
+
+.filmResultClass {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/smaugeye0.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#img-thumb, table, #plot-content {
+    background-color: rgba(51,51,51,0.8);
+    border: 1.5px solid rgba(204,204,204,0.8);
 }
 
 /* Characters Page */
