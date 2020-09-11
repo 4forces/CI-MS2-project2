@@ -4,6 +4,80 @@ $(function () {
     //test script in console
     console.log("script console is working!!!");
 
+
+//film listing - from omdb
+$('#film-btn').on('click', function () {
+    let filmVal = $('#film-search').val();
+    console.log("film selected: " + filmVal);
+    // $("#film-lst").empty();
+    // $('#filmRating-lst').empty()
+    $('h5').empty();
+    $('.list-contents').empty();
+    $('#book-cover').empty();
+    $('#films-loader').show();
+
+    //axios call for book details
+    axios({
+        method: 'get',
+        url: "http://www.omdbapi.com/",
+        params: {
+            apikey: "9c84f680",
+            i: filmVal,
+        }
+    })
+        .then(function (response) {
+            // handle success
+            console.log(response.data);
+            let poster = response.data.Poster;
+            let title = response.data.Title;
+            let rated = response.data.Rated;
+            let released = response.data.Released;
+            let runtime = response.data.Runtime;
+            let genre = response.data.Genre;
+            let director = response.data.Director;
+            let writer = response.data.Writer;
+            let actors = response.data.Actors;
+            let plot = response.data.Plot;
+            let awards = response.data.Awards;
+
+            let awdImdbSrc= response.data.Ratings[0].Source;
+            let awdImdbVal= response.data.Ratings[0].Value;
+            let awdRtSrc= response.data.Ratings[1].Source;
+            let awdRtVal = response.data.Ratings[1].Value;
+            let awdMcSrc= response.data.Ratings[2].Source;
+            let awdMcVal = response.data.Ratings[2].Value;
+
+            $('#films-loader').hide();
+
+            $('#film-lst').append(`<img src="${poster}"></img>`);
+            $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
+            $('#film-lst').append(`<li><b>Rated:</b> ${rated}</li>`);
+            $('#film-lst').append(`<li><b>Released:</b> ${released}</li>`);
+            $('#film-lst').append(`<li><b>Runtime:</b> ${runtime}</li>`);
+            $('#film-lst').append(`<li><b>Genre:</b> ${genre}</li>`);
+            $('#film-lst').append(`<li><b>Director:</b> ${director}</li>`);
+            $('#film-lst').append(`<li><b>Writer:</b> ${writer}</li>`);
+            $('#film-lst').append(`<li><b>Cast:</b> ${actors}</li>`);
+            $('#film-lst').append(`<li><b>Plot:</b> ${plot}</li>`);
+            $('#film-lst').append(`<li><b>Awards:</b> ${awards}</li>`);
+
+            console.log(`${awdImdbSrc}:${awdImdbVal}`);
+            $('#rating-title').append("Ratings");
+            $('#filmRating-lst').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
+            $('#filmRating-lst').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
+            $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
+
+
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+
+});
+
+
+
     //character listing - From restdb API
     $('#char-btn').on('click', function () {
         let char = $('#char-search').val();
@@ -15,7 +89,6 @@ $(function () {
         $('.list-contents').empty();
         $('#book-cover').empty();
         $('#characters-loader').show();
-
 
         //alert("book-btn2 is working");//test button is working
 
@@ -94,6 +167,8 @@ $(function () {
             })
     });
 
+
+
     //book listing - from restdb.io API using Axios
     $('#book-btn').on('click', function () {
         let bookVal = $('#book-search').val();
@@ -125,7 +200,7 @@ $(function () {
                 let synopsis = response.data[0].synopsis;
                 let description = response.data[0].description;
 
-                $('#book-loader').hide();
+                $('#books-loader').hide();
 
                 $('#book-lst').append(`<li><b>Title: </b>${title}</li>`);
                 $('#book-lst').append(`<li><b>Author: </b>${author}</li>`);
@@ -141,77 +216,6 @@ $(function () {
     });
 
 
-
-    //film listing - from omdb
-    $('#film-btn').on('click', function () {
-        let filmVal = $('#film-search').val();
-        console.log("film selected: " + filmVal);
-        // $("#film-lst").empty();
-        // $('#filmRating-lst').empty()
-        $('h5').empty();
-        $('.list-contents').empty();
-        $('#book-cover').empty();
-        $('#films-loader').show();
-
-        //axios call for book details
-        axios({
-            method: 'get',
-            url: "http://www.omdbapi.com/",
-            params: {
-                apikey: "9c84f680",
-                i: filmVal,
-            }
-        })
-            .then(function (response) {
-                // handle success
-                console.log(response.data);
-                let poster = response.data.Poster;
-                let title = response.data.Title;
-                let rated = response.data.Rated;
-                let released = response.data.Released;
-                let runtime = response.data.Runtime;
-                let genre = response.data.Genre;
-                let director = response.data.Director;
-                let writer = response.data.Writer;
-                let actors = response.data.Actors;
-                let plot = response.data.Plot;
-                let awards = response.data.Awards;
-
-                let awdImdbSrc= response.data.Ratings[0].Source;
-                let awdImdbVal= response.data.Ratings[0].Value;
-                let awdRtSrc= response.data.Ratings[1].Source;
-                let awdRtVal = response.data.Ratings[1].Value;
-                let awdMcSrc= response.data.Ratings[2].Source;
-                let awdMcVal = response.data.Ratings[2].Value;
-
-                $('#films-loader').hide();
-
-                $('#film-lst').append(`<img src="${poster}"></img>`);
-                $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
-                $('#film-lst').append(`<li><b>Rated:</b> ${rated}</li>`);
-                $('#film-lst').append(`<li><b>Released:</b> ${released}</li>`);
-                $('#film-lst').append(`<li><b>Runtime:</b> ${runtime}</li>`);
-                $('#film-lst').append(`<li><b>Genre:</b> ${genre}</li>`);
-                $('#film-lst').append(`<li><b>Director:</b> ${director}</li>`);
-                $('#film-lst').append(`<li><b>Writer:</b> ${writer}</li>`);
-                $('#film-lst').append(`<li><b>Cast:</b> ${actors}</li>`);
-                $('#film-lst').append(`<li><b>Plot:</b> ${plot}</li>`);
-                $('#film-lst').append(`<li><b>Awards:</b> ${awards}</li>`);
-
-                console.log(`${awdImdbSrc}:${awdImdbVal}`);
-                $('#rating-title').append("Ratings");
-                $('#filmRating-lst').append(`<li><b>${awdImdbSrc}:</b> ${awdImdbVal}</li>`);
-                $('#filmRating-lst').append(`<li><b>${awdRtSrc}:</b> ${awdRtVal}</li>`);
-                $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
-
-
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-
-    });
 
     // film method 2 modal test
     $('#myModal').on('show.bs.modal', function (e) {
