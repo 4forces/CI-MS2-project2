@@ -54,20 +54,24 @@ $(function () {
                 $("#f-results-pg").addClass("filmResultClass");
 
 
-                let template = `
-                <div class='container'>
+                let movieTemplate = `
+                <div class='container' id='film-marker'>
                 <div id='title' class='row justify-content-center m-3 text-center'>
                     <h2 class="text-white">${title}<h2>
                 </div>
 
-                <div id='details' class='row justify-content-center'>
-                    <div class='col-sm-4'>
-                      <img src="${poster}" class="img-fluid img-thumbnail my-3" id="img-thumb">
+                <div id='movie-details' class='row justify-content-center'>
+                    <div class='col-sm-4 col-lg-2'>
+                      <img src="${poster}" class="img-fluid img-thumbnail my-3 img-thumb">
                     </div>
 
-                    <div class='col-sm-8'>
+                    <div class='col-sm-8 col-lg-10'>
                       <table class="table text-white">
                       <tbody>
+                        <tr>
+                          <th scope="row">Director</th>
+                          <td> ${director}</td>
+                        </tr>
                         <tr>
                           <th scope="row">Writers</th>
                           <td>${writer}</td>
@@ -98,9 +102,9 @@ $(function () {
                 </div>
 
                 <div class='row justify-content-center my-3'>
-                    <div class='text-white> <!-- only 1 col: plot title and content both included -->
+                    <div class='text-white'>
                       <h4 class="text-center">Plot</h4>
-                      <p id="plot-content" class="p-3 mx-3">${plot}</p>
+                      <p class="contbox p-3 mx-3">${plot}</p>
                     </div>
                 </div>
 
@@ -129,7 +133,7 @@ $(function () {
 
               </div>`
 
-                $('#f-results-pg').html(template);
+                $('#f-results-pg').html(movieTemplate);
 
                 // $('#film-lst').append(`<img src="${poster}"></img>`);
                 // $('#film-lst').append(`<li><b>Title:</b> ${title}</li>`);
@@ -150,7 +154,7 @@ $(function () {
                 // $('#filmRating-lst').append(`<li><b>${awdMcSrc}:</b> ${awdMcVal}</li>`);
 
                 $('#films-loader').hide();
-                $('#f-results-pg')[0].scrollIntoView();
+                $('#f-results-pg')[0].scrollIntoView(false);
 
             })
             .catch(function (error) {
@@ -206,6 +210,9 @@ $(function () {
                 $('#char-lst').append(`<li><b>Date of birth</b>: ${birthDate}</li>`);
                 $('#char-lst').append(`<li><b>Date of death</b>: ${deathDate}</li>`);
                 $('#char-lst').append(`<li><b>More info</b>: <a href="${url}" target="_blank">${url}</a></li>`);
+
+
+
             })
             .catch(function (error) {
                 // handle error
@@ -269,7 +276,7 @@ $(function () {
         $('#books-loader').show();
         //Book cover from OpenLibrary
         console.log('book cover value selected: ' + bookVal)
-        $('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
+        //$('#book-cover').append(`<img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg"/><br>`)
 
         //axios call for book details
         axios({
@@ -288,13 +295,61 @@ $(function () {
                 let synopsis = response.data[0].synopsis;
                 let description = response.data[0].description;
 
-                $('#books-loader').hide();
+                //Books results page
+                $("#b-results-pg").addClass("bookResultClass");
 
-                $('#book-lst').append(`<li><b>Title: </b>${title}</li>`);
-                $('#book-lst').append(`<li><b>Author: </b>${author}</li>`);
-                $('#book-lst').append(`<li><b>Description: </b>${description}</li>`);
-                $('#book-lst').append(`<li><b>First published: </b>${firstPublish}</li>`);
-                $('#book-lst').append(`<li><b>Synopsis: </b>${synopsis}</li>`);
+
+                let bookTemplate = `
+                <div class='container' id='book-marker'>
+                  <div class='row justify-content-center m-3 text-center'>
+                      <h2 class="text-white">${title}<h2>
+                  </div>
+
+                  <div class='row justify-content-center'>
+                    <div class='col-sm-4 col-lg-2'>
+                      <img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg" class="img-fluid img-thumbnail my-3 img-thumb">
+                    </div>
+
+                    <div class='col-sm-8 col-lg-10'>
+                      <table class="table text-white">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Author</th>
+                            <td>${author}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">First Published</th>
+                            <td>${firstPublish}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>${description}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class='row justify-content-center my-3'>
+                      <div class='text-white'>
+                        <h4 class="text-center">Synopsis</h4>
+                        <p class="p-3 mx-3 contbox">${synopsis}</p>
+                      </div>
+                    </div>
+                </div>
+              </div>`
+
+                $('#b-results-pg').html(bookTemplate);
+
+
+                $('#books-loader').hide();
+                $('#book-marker')[0].scrollIntoView(false);
+
+              //display by list - old
+                // $('#book-lst').append(`<li><b>Title: </b>${title}</li>`);
+                // $('#book-lst').append(`<li><b>Author: </b>${author}</li>`);
+                // $('#book-lst').append(`<li><b>Description: </b>${description}</li>`);
+                // $('#book-lst').append(`<li><b>First published: </b>${firstPublish}</li>`);
+                // $('#book-lst').append(`<li><b>Synopsis: </b>${synopsis}</li>`);
             })
             .catch(function (error) {
                 // handle error

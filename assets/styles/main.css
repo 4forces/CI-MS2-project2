@@ -75,11 +75,6 @@ header.masthead {
     background-size: cover;
 }
 
-#img-thumb, table, #plot-content {
-    background-color: rgba(51,51,51,0.8);
-    border: 1.5px solid rgba(204,204,204,0.8);
-}
-
 /* Characters Page */
 #characters {
     padding-top: 10rem;
@@ -91,6 +86,7 @@ header.masthead {
     background-size: cover;
 }
 
+/* Books Page */
 #books {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
@@ -99,6 +95,20 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+}
+
+.bookResultClass {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/smaug2.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#book-loader {
+    color: #9ba1a8;
 }
 
 /* Navbar */
@@ -114,12 +124,20 @@ hr.divider {
     border-color: #f4623a;
 }
 
-/* common */
 hr.light {
     border-color: #fff;
 }
 
-/*Section 1 Films*/
+.img-thumb, table, .contbox {
+    background-color: rgba(51,51,51,0.8);
+    border: 1.5px solid rgba(204,204,204,0.8);
+}
+
+.spinner-grow {
+
+}
+
+
 .page-section {
     padding: 8rem 0;
 }
