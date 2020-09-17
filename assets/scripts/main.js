@@ -20,7 +20,7 @@ $(function () {
         //axios call for book details
         axios({
             method: 'get',
-            url: "http://www.omdbapi.com/",
+            url: "https://www.omdbapi.com/",
             params: {
                 apikey: "9c84f680",
                 i: filmVal,
