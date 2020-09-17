@@ -185,10 +185,11 @@ $(function () {
         //alert("book-btn2 is working");//test button is working
 
         //axios call
-        axios({
-            method: 'get',
-            url: "https://lotrings-7150.restdb.io/rest/char-info",
-            headers: {'x-apikey': '5f4733fc3abd4e679e244cbf'},
+
+        //API 1
+        axios.get(
+            "https://lotrings-7150.restdb.io/rest/char-info",
+            {headers: {'x-apikey': '5f4733fc3abd4e679e244cbf'},
             params: {
                 q: { "Name": char }
             }
@@ -203,6 +204,66 @@ $(function () {
                 let deathDate = response.data[0].death;
                 let name = response.data[0].Name;
                 let url = response.data[0].Url;
+
+
+                let charTemplate = `
+                  <div class='container'>
+                      <div class='row' justify-content-center m-3 text center'>
+                        <h2 class="text-white">${name}<h2>
+                      </div>
+
+
+                        <div class='col-sm-8 col-lg-10'>
+                          <table class="table text-white">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Race</th>
+                                <td>${race}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Gender</th>
+                                <td>${gender}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Date of Birth</th>
+                                <td>${birthDate}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Date of Death</th>
+                                <td>${deathDate}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">More Info</th>
+                                <td>${url}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+
+                      <div class='col-sm-8 col-lg-10'>
+                          <table class="table text-white">
+                            <tbody>
+                              <tr>
+                                <th scope="row">Race</th>
+                                <td>${race}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Gender</th>
+                                <td>${gender}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Date of Birth</th>
+                                <td>${birthDate}</td>
+                              </tr>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+
+
+                  </div>
+                `
+
 
                 $('#char-lst').append(`<li><b>Name</b>: ${name}</li>`);
                 $('#char-lst').append(`<li><b>Race</b>: ${race}</li>`);
@@ -244,8 +305,9 @@ $(function () {
                 console.log(response.data)
 
                 let lgth = response.data.length;
+                let maxLgth = lgth - 3;
 
-                let randomLgth = Math.floor((Math.random() * lgth));
+                let randomLgth = Math.floor((Math.random() * maxLgth));
                 console.log('randomLgth= ' + lgth);
 
                 for(let i = randomLgth; i < randomLgth + 3; i++) {
