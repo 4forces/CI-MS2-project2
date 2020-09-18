@@ -4,7 +4,8 @@ $(function () {
     //test script in console
     console.log("script console is working!!!");
 
-
+    // scrollspy
+    $('body').scrollspy({ target: '#mainNav' });
 
     //film listing - from omdb
     $('#film-btn').on('click', function () {
@@ -209,7 +210,7 @@ $(function () {
 
                 let charTemplate = `
                   <div class='container'>
-                      <div class='row' justify-content-center m-3 text center'>
+                      <div class='row justify-content-center m-3 text center'>
                         <h2 class="text-white">${name}</h2>
                       </div>
 
@@ -243,7 +244,7 @@ $(function () {
 
                       <div class='container'>
                       <div class='row' justify-content-center m-3 text center'>
-                        <h6 class="text-white">Quotes</h6>
+                        <h4 class="text-white">Quotes</h4>
                       </div>
 
                         <div class='col-sm-8 col-lg-10'>
@@ -275,7 +276,7 @@ $(function () {
 
 
                 $('#characters-loader').hide();
-
+                $('#c-results-pg')[0].scrollIntoView(false);
 
 
             })
