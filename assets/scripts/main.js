@@ -311,8 +311,8 @@ $(function () {
                     console.log('i= '+ i);
                     let quote = response.data[i].dialog;
                     let qMovie = response.data[i].movie;
-                    $('#quote-lst').append(`<li><b>Dialog: </b>hello</li>`);
-                    $('#quote-lst').append(`<li><b>Movie: </b>byebye</li><br>`);
+                    $('#quote-lst').append(`<li>${quote}</li>`);
+                    $('#quote-lst').append(`<li><em> - ${qMovie}</em></li><br>`);
                     }
 
 
