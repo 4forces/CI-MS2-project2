@@ -209,7 +209,7 @@ $(function () {
                 let charTemplate = `
                   <div class='container'>
                       <div class='row' justify-content-center m-3 text center'>
-                        <h2 class="text-white">${name}<h2>
+                        <h2 class="text-white">${name}</h2>
                       </div>
 
 
@@ -240,30 +240,30 @@ $(function () {
                           </table>
                       </div>
 
-                      <div class='col-sm-8 col-lg-10'>
-                          <table class="table text-white">
-                            <tbody>
-                              <tr>
-                                <th scope="row">Race</th>
-                                <td>${race}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">Gender</th>
-                                <td>${gender}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">Date of Birth</th>
-                                <td>${birthDate}</td>
-                              </tr>
-                              </tr>
-                            </tbody>
-                          </table>
+                      <div class='container'>
+                      <div class='row' justify-content-center m-3 text center'>
+                        <h6 class="text-white">Quotes</h6>
                       </div>
+
+                        <div class='col-sm-8 col-lg-10'>
+                            <table class="table text-white">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <ul class="list-inline text-white list-contents" id='quote-lst'>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
 
 
                   </div>
                 `
+                $('#c-results-pg').html(charTemplate);
 
+
+                getQuote();
 
                 $('#char-lst').append(`<li><b>Name</b>: ${name}</li>`);
                 $('#char-lst').append(`<li><b>Race</b>: ${race}</li>`);
@@ -283,18 +283,14 @@ $(function () {
 
 
     // Character Quotes -restdb API
-    $('#char-btn').on('click', function () {
-        let char = $('#char-search').val();
-        //alert("book-btn2 is working");//test button is working
-        //axios call
-        axios({
-            method: 'get',
-            url: "https://lotrp2-7ba7.restdb.io/rest/quote",
-            headers: {'x-apikey': '5f4a6a473abd4e679e244db8'},
+        function getQuote() {
+          axios.get(
+            "https://lotrp2-7ba7.restdb.io/rest/quote",
+            {headers: {'x-apikey': '5f4a6a473abd4e679e244db8'},
             params: {
                 q: { "character": char }
-            }
-        })
+             }
+          })
             .then(function (response) {
                 // handle success
                 $('#quote-title').append("Quotes from the movies");
@@ -302,7 +298,7 @@ $(function () {
 
                 $('#characters-loader').hide();
 
-                console.log(response.data)
+                console.log(response.data);
 
                 let lgth = response.data.length;
                 let maxLgth = lgth - 3;
@@ -317,12 +313,8 @@ $(function () {
                     $('#quote-lst').append(`<li><b>Dialog: </b>${quote}</li>`);
                     $('#quote-lst').append(`<li><b>Movie: </b>${qMovie}</li><br>`);
                     }
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-    });
+              })
+      }
 
 
 
