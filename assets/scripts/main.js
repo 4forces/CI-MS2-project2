@@ -197,7 +197,7 @@ $(function () {
             .then(function (response) {
                 // handle success
                 // let d = data.docs[0];
-                console.log(response.data[0].data)
+                console.log(response.data[0])
                 let race = response.data[0].race;
                 let gender = response.data[0].gender;
                 let birthDate = response.data[0].birth;
@@ -250,7 +250,7 @@ $(function () {
                               <tbody>
                                 <tr>
                                   <td>
-                                    <ul class="list-inline text-white list-contents" id='quote-lst'>
+                                    <ul class="list-inline text-white list-contents" id='quote-lst'><ul>
                                   </td>
                                 </tr>
                               </tbody>
@@ -265,12 +265,15 @@ $(function () {
 
                 getQuote();
 
-                $('#char-lst').append(`<li><b>Name</b>: ${name}</li>`);
-                $('#char-lst').append(`<li><b>Race</b>: ${race}</li>`);
-                $('#char-lst').append(`<li><b>Gender</b>: ${gender}</li>`);
-                $('#char-lst').append(`<li><b>Date of birth</b>: ${birthDate}</li>`);
-                $('#char-lst').append(`<li><b>Date of death</b>: ${deathDate}</li>`);
-                $('#char-lst').append(`<li><b>More info</b>: <a href="${url}" target="_blank">${url}</a></li>`);
+                // $('#char-lst').append(`<li><b>Name</b>: ${name}</li>`);
+                // $('#char-lst').append(`<li><b>Race</b>: ${race}</li>`);
+                // $('#char-lst').append(`<li><b>Gender</b>: ${gender}</li>`);
+                // $('#char-lst').append(`<li><b>Date of birth</b>: ${birthDate}</li>`);
+                // $('#char-lst').append(`<li><b>Date of death</b>: ${deathDate}</li>`);
+                // $('#char-lst').append(`<li><b>More info</b>: <a href="${url}" target="_blank">${url}</a></li>`);
+
+
+                $('#characters-loader').hide();
 
 
 
@@ -279,7 +282,7 @@ $(function () {
                 // handle error
                 console.log(error);
             })
-    });
+    // });
 
 
     // Character Quotes -restdb API
@@ -289,14 +292,12 @@ $(function () {
             {headers: {'x-apikey': '5f4a6a473abd4e679e244db8'},
             params: {
                 q: { "character": char }
-             }
+              }
           })
             .then(function (response) {
                 // handle success
-                $('#quote-title').append("Quotes from the movies");
-                $('#quote-explain').append("");
-
-                $('#characters-loader').hide();
+                // $('#quote-title').append("Quotes from the movies");
+                // $('#quote-explain').append("");
 
                 console.log(response.data);
 
@@ -310,12 +311,19 @@ $(function () {
                     console.log('i= '+ i);
                     let quote = response.data[i].dialog;
                     let qMovie = response.data[i].movie;
-                    $('#quote-lst').append(`<li><b>Dialog: </b>${quote}</li>`);
-                    $('#quote-lst').append(`<li><b>Movie: </b>${qMovie}</li><br>`);
+                    $('#quote-lst').append(`<li><b>Dialog: </b>hello</li>`);
+                    $('#quote-lst').append(`<li><b>Movie: </b>byebye</li><br>`);
                     }
-              })
-      }
 
+
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+          }
+
+        });
 
 
     //book listing - from restdb.io API using Axios
