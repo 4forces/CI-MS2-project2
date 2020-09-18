@@ -209,58 +209,60 @@ $(function () {
                 $("#c-results-pg").addClass("charResultClass");
 
                 let charTemplate = `
-                  <div class='container'>
-                      <div class='row justify-content-center m-3 text center'>
-                        <h2 class="text-white">${name}</h2>
-                      </div>
+                <div class='container'>
 
+                <div class='row justify-content-center m-3 text-center'>
+                  <h2 class="text-white">${name}</h2>
+                </div>
 
-                        <div class='col-sm-8 col-lg-10'>
-                          <table class="table text-white">
+                <div class='row justify-content-center'>
+                    <div class='col-sm-8 col-lg-10'>
+                        <table class="table text-white">
                             <tbody>
-                              <tr>
-                                <th scope="row">Race</th>
-                                <td>${race}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">Gender</th>
-                                <td>${gender}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">Date of Birth</th>
-                                <td>${birthDate}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">Date of Death</th>
-                                <td>${deathDate}</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">More Info</th>
-                                <td>${url}</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                      </div>
-
-                      <div class='container'>
-                      <div class='row' justify-content-center m-3 text center'>
-                        <h4 class="text-white">Quotes</h4>
-                      </div>
-
-                        <div class='col-sm-8 col-lg-10'>
-                            <table class="table text-white">
-                              <tbody>
                                 <tr>
-                                  <td>
-                                    <ul class="list-inline text-white list-contents" id='quote-lst'><ul>
-                                  </td>
+                                    <th scope="row">Race</th>
+                                    <td>${race}</td>
                                 </tr>
-                              </tbody>
-                            </table>
-                        </div>
+                                <tr>
+                                    <th scope="row">Gender</th>
+                                    <td>${gender}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date of Birth</th>
+                                    <td>${birthDate}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Date of Death</th>
+                                    <td>${deathDate}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">More Info</th>
+                                    <td><a href="${url}" target="_blank">${url}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
+                <div class='row justify-content-center m-3 text-center'>
+                    <h4 class="text-white">Quotes</h4>
+                </div>
 
+                <div class='row justify-content-center'>
+                  <div class='col-sm-8 col-lg-10'>
+                    <table class="table text-white">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <ul class="list-inline text-white list-contents" id='quote-lst'>
+                              <ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
+                </div>
+
                 `
                 $('#c-results-pg').html(charTemplate);
 
@@ -275,8 +277,6 @@ $(function () {
                 // $('#char-lst').append(`<li><b>More info</b>: <a href="${url}" target="_blank">${url}</a></li>`);
 
 
-                $('#characters-loader').hide();
-                $('#c-results-pg')[0].scrollIntoView(false);
 
 
             })
@@ -316,6 +316,9 @@ $(function () {
                     $('#quote-lst').append(`<li>"${quote}"</li>`);
                     $('#quote-lst').append(`<li><em> - ${qMovie}</em></li><br>`);
                     }
+
+                $('#characters-loader').hide();
+                $('#c-results-pg')[0].scrollIntoView(false);
 
 
               })

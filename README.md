@@ -1,6 +1,6 @@
 <img src="images/#.png" width="600" style="margin: 0;">
 
-# Project Title: Revamp of Cakkavala Meditation Centre Website
+# Project Title: Lord of the Rings Database
 
 ## 1. Overview
 
