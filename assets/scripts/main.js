@@ -205,6 +205,7 @@ $(function () {
                 let name = response.data[0].Name;
                 let url = response.data[0].Url;
 
+                $("#c-results-pg").addClass("charResultClass");
 
                 let charTemplate = `
                   <div class='container'>
@@ -311,7 +312,7 @@ $(function () {
                     console.log('i= '+ i);
                     let quote = response.data[i].dialog;
                     let qMovie = response.data[i].movie;
-                    $('#quote-lst').append(`<li>${quote}</li>`);
+                    $('#quote-lst').append(`<li>"${quote}"</li>`);
                     $('#quote-lst').append(`<li><em> - ${qMovie}</em></li><br>`);
                     }
 
