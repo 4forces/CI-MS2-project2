@@ -235,7 +235,7 @@ $(function () {
                       <tbody>
                         <tr>
                           <td>
-                            <ul class="list-inline text-white list-contents" id='quote-lst'>
+                            <ul class="mb-0 list-inline text-white list-contents" id='quote-lst'>
                               <ul>
                           </td>
                         </tr>
