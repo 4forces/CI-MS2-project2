@@ -348,11 +348,11 @@ $(function () {
 
                   <!-- Books covers are retrieved from OpenLibrary -->
                   <div class='row justify-content-center'>
-                    <div class='col-sm-4 col-lg-2'>
-                      <img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg" class="img-fluid img-thumbnail my-3 img-thumb">
+                    <div class='col-lg-3'>
+                      <img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg" class="img-fluid img-thumbnail mb-3 img-thumb">
                     </div>
 
-                    <div class='col-sm-8 col-lg-10'>
+                    <div class='col-lg-9'>
                       <table class="table text-white">
                         <tbody>
                           <tr>
@@ -371,9 +371,12 @@ $(function () {
                       </table>
                     </div>
 
+                    <div class='row justify-content-center m-3 text-center'>
+                      <h4 class="text-white">Synopsis</h4>
+                    </div>
+
                     <div class='row justify-content-center my-3'>
                       <div class='text-white'>
-                        <h4 class="text-center">Synopsis</h4>
                         <p class="p-3 mx-3 contbox">${synopsis}</p>
                       </div>
                     </div>
@@ -388,7 +391,6 @@ $(function () {
 
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       }) // end of axios request for book details
 
