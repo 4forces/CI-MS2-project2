@@ -13,9 +13,14 @@ $(function () {
         console.log("film selected: " + filmVal);
         // $("#film-lst").empty();
         // $('#filmRating-lst').empty()
-        $('h5').empty();
-        $('.list-contents').empty();
-        $('#book-cover').empty();
+        $('#f-results-pg').empty();
+        $('#c-results-pg').empty();
+        $('#b-results-pg').empty();
+
+        $("#f-results-pg").removeClass("filmResultClass");
+        $("#c-results-pg").removeClass("charResultClass");
+        $("#b-results-pg").removeClass("bookResultClass");
+
         $('#films-loader').show();
 
         //axios call for book details
@@ -178,9 +183,14 @@ $(function () {
         // $('#char-lst').empty();
         // $('#quote-title').empty();
         // $('#quote-lst').empty();
-        $('h5').empty();
-        $('.list-contents').empty();
-        $('#book-cover').empty();
+        $('#f-results-pg').empty();
+        $('#c-results-pg').empty();
+        $('#b-results-pg').empty();
+
+        $("#f-results-pg").removeClass("filmResultClass");
+        $("#c-results-pg").removeClass("charResultClass");
+        $("#b-results-pg").removeClass("bookResultClass");
+
         $('#characters-loader').show();
 
         //alert("book-btn2 is working");//test button is working
@@ -337,9 +347,15 @@ $(function () {
         console.log("book value selected: " + bookVal);
         // $("#book-lst").empty();
         // $('#book-cover').empty();
-        $('h5').empty();
-        $('.list-contents').empty();
-        $('#book-cover').empty();
+
+        $('#f-results-pg').empty();
+        $('#c-results-pg').empty();
+        $('#b-results-pg').empty();
+
+        $("#f-results-pg").removeClass("filmResultClass");
+        $("#c-results-pg").removeClass("charResultClass");
+        $("#b-results-pg").removeClass("bookResultClass");
+
         $('#books-loader').show();
         //Book cover from OpenLibrary
         console.log('book cover value selected: ' + bookVal)
@@ -434,8 +450,11 @@ $(function () {
         console.log("film selected by modal method: " + filmVal);
         // $("#film-lst").empty();
         // $('#filmRating-lst').empty()
-        $('h5').empty();
-        $('.list-contents').empty();
+
+        $('#f-results-pg').empty();
+        $('#c-results-pg').empty();
+        $('#b-results-pg').empty();
+
         $('#book-cover').empty();
 
         //axios call for book details

@@ -69,8 +69,8 @@ header.masthead {
 .filmResultClass {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/smaugeye0.jpg");
-    background-position: top;
+    background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/balrog5.jpg");
+    background-position: 42%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -91,7 +91,7 @@ header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
     background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/char-shadow2a.png");
-    background-position: center;
+    background-position: 95%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -112,7 +112,7 @@ header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
     background: linear-gradient(to bottom, rgba(187, 158, 137, 0.35) 0%, rgba(187, 158, 137, 0.2) 100%), url("../img/smaug2.jpg");
-    background-position: top left;
+    background-position: 11% 0%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
