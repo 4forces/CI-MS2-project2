@@ -66,11 +66,11 @@ $(function () {
                 </div>
 
                 <div id='movie-details' class='row justify-content-center'>
-                    <div class='col-sm-4 col-lg-2'>
-                      <img src="${poster}" class="img-fluid img-thumbnail my-3 img-thumb">
+                    <div class='col-lg col-lg-3'>
+                      <img src="${poster}" class="img-fluid img-thumbnail mb-3 img-thumb">
                     </div>
 
-                    <div class='col-sm-8 col-lg-10'>
+                    <div class='col-lg col-lg-19'>
                       <table class="table text-white">
                       <tbody>
                         <tr>

@@ -90,6 +90,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    height: 100vh;
 }
 
 
@@ -177,14 +178,5 @@ header.masthead {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         background-color: #403d34;
         transition: background-color 0.2s ease;
-    }
-}
-
-@media (min-width: 992px) {
-    header.masthead {
-        height: 100vh;
-        min-height: 40rem;
-        padding-top: 4.5rem;
-        padding-bottom: 0;
     }
 }
