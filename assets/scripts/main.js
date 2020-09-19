@@ -66,11 +66,11 @@ $(function () {
                 </div>
 
                 <div id='movie-details' class='row justify-content-center'>
-                    <div class='col-lg col-lg-3'>
+                    <div class='col-lg-3'>
                       <img src="${poster}" class="img-fluid img-thumbnail mb-3 img-thumb">
                     </div>
 
-                    <div class='col-lg col-lg-19'>
+                    <div class='col-lg-9'>
                       <table class="table text-white">
                       <tbody>
                         <tr>
@@ -197,7 +197,7 @@ $(function () {
                 </div>
 
                 <div class='row justify-content-center'>
-                    <div class='col-sm-8 col-lg-10'>
+                    <div class='col-sm-10'>
                         <table class="table text-white">
                             <tbody>
                                 <tr>
@@ -230,7 +230,7 @@ $(function () {
                 </div>
 
                 <div class='row justify-content-center'>
-                  <div class='col-sm-8 col-lg-10'>
+                  <div class='col-sm-10'>
                     <table class="table text-white">
                       <tbody>
                         <tr>
