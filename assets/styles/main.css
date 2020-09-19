@@ -103,6 +103,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    height: 100vh;
 }
 
 .filmResultClass {
@@ -127,6 +128,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    height: 100vh;
 }
 
 .charResultClass {
@@ -151,6 +153,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    height: 100vh;
 }
 
 .bookResultClass {
@@ -183,17 +186,5 @@ header.masthead {
         min-height: 40rem;
         padding-top: 4.5rem;
         padding-bottom: 0;
-    }
-
-    #films {
-        height: 100vh;
-    }
-
-    #characters {
-        height: 100vh;
-    }
-
-    #books {
-        height: 100vh;
     }
 }
