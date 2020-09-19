@@ -1,56 +1,99 @@
-<img src="images/#.png" width="600" style="margin: 0;">
+<img src="images/#.png" width="600" style="margin: 0;"> OR <gif demo>
+***
+# The Lord of the Rings – _One Site to Find Them All_
+***
 
-# Project Title: Lord of the Rings Database
+## Overview
+This site was conceptualised from the perspective of a _Lord of the Rings_ fan. Users should find it useful for recollecting information on the films, various characters of Middle-earth, and books written by J. R. R. Tolkien et al. This site has been created by a LOTR fan for LOTR fans, both current and hopefully future ones.
 
-## 1. Overview
+#### Objective
+This site offers itself as a key information center for most if not all things related to the Lord of the Rings. Users will be able to quickly retrieve information with regards to the films, characters and books. It is hoped that any one who visits this site can savour a bit of the grandeur of this aweseome series!
 
+***
+## UX and UI
+The ideal user for this site will be someone who enjoys the Lord of the Rings very much, and wishes to quickly obtain information about the films, characters or books. Anyone who has a general in the Lord of the Rings series should also be able to appreciate the information this site can provide.
+The developer made efforts to source for images that will convey the rich background and storyline of this immensely popular series, especially if one has watched the films.
+The site design is clean and simple, and should be straightforward to navigate.
 
-### Problem statement
+#### User Stories
+1. "I want to find some quick information on the Lord of the Rings movies, such as its director, cast, and movie ratings." – _LOTR film buff._
+2. "I'm interested to retrieve some key information on the characters. For example race and date-of-birth." _– Someone who wants to know the characters better._
+3. "What are some random quotes uttered by the characters in the movies?" _– Curious user._
+4. "What are the books related to the LOTRs?" _– LOTR Bookworm_
 
-### Objective
+#### Wireframes
+##### Films Page
+* [Mockup 1](https://www.google.com)
+* [Mockup 2](https://www.google.com)
+* [Mockup 3](https://www.google.com)
+##### Characters Page
+* [Mockup 1](https://www.google.com)
+* [Mockup 2](https://www.google.com)
+* [Mockup 3](https://www.google.com)
+##### Books Page
+* [Mockup 1](https://www.google.com)
+* [Mockup 2](https://www.google.com)
+* [Mockup 3](https://www.google.com)
 
-### Demo of Revamped Site
-
-## 2. UX, UI and Features
-
-### Wireframes
-
-*Figure (a): Wireframes by Hand-sketching*
-
-<img src="images/wf-sketch1.jpeg" width="400" style="margin: 0;"> <img src="images/wf-sketch2.jpeg" width="400" style="margin: 0;">
-
-*Figure (b): Wireframes by Adobe XD*
-
-<img src="images/xd1.png" width="150" style="margin: 0;"> <img src="images/xd2.png" width="150" style="margin: 0;"> <img src="images/xd3.png" width="150" style="margin: 0;">
-
-### Appearance
-
-### Features and Pages
-
-__a) Home Page__
-
-__b) E-dhamma Page__
-
-__c) Contact Page__
+Process:
+initial idea to use 3 apis: lotr heroku, omdb,
 
 random length, issue of hitting max length.
 
-### Target Audience
+***
+## Features
+### Existing Features
+#### Landing Page
+#### Films Page
+#### Characters Page
+#### Books Page
+### Future implementations
+#### Landing Page
+#### Films Page
+#### Characters Page
+#### Books Page
+***
+## Technologies Used
+***
+## Testing
+### Issues and Bugs
+1. form validation not present. form validation capital letter on restdb
+2. Scrollspy: Unable to align the page nicely upon click
+3. Update of navbar heading sometimes not accurate, especially when scrolling fast
 
-### Future Improvements
+## Deployment
+This site was largely developed using [VS Code](https://code.visualstudio.com/), and pushed to GitHub from VS Code. [Gitpod](https://gitpod.io/workspaces/) was initially used during the initial stages of development.
+The steps used to deploy this project is be divided into two parts:
 
-## 3. Technologies Used
+**(a) Creating the Repository**
+1. Login to GitHub.
+2. Click on the "+" sign at the top right hand corner of the screen, and select "New repository".
+3. Input a unique name under "Repository name", and an optional description of the to-be-created repository.
+4. Select the option of making the repository "Public".
+5. Check the option "Add a README file".
+6. Click on the  "Create Repository" button.
+7. User will be brought to the newly created repository page.
 
-## 4. Testing
+**(b) Deploying to GitHub Pages**
+1. On the menu-bar, click on "Settings" (Beside the gear icon).
+2. Scroll down to "GitHub Pages" section.
+3. Under "Source", select "Branch: master".
+4. Click "Save", and the website will be deployed.
+5. Scroll down to "GitHub Pages" section again, where the deployed link can be retrieved.
+6. This project can be accessed at the deployed link [here](https://4forces.github.io/CI-MS2-project2/).
 
 
-__Checks performed__
 
-__Bugs discovered__
+## Credits
+#### Content
+#### Code
 
-## 5. Credits
+## Acknowledgements
 
-__HTML and CSS Tips:__
+
+### Disclaimer
+
+For education purposes only
 
 __Images:__
 https://www.gamespot.com/gallery/amazons-lord-of-the-rings-tv-show-everything-we-kn/2900-3493/#6

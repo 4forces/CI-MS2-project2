@@ -371,14 +371,11 @@ $(function () {
                       </table>
                     </div>
 
-                    <div class='row justify-content-center m-3 text-center'>
-                      <h4 class="text-white">Synopsis</h4>
-                    </div>
-
-                    <div class='row justify-content-center my-3'>
-                      <div class='text-white'>
-                        <p class="p-3 mx-3 contbox">${synopsis}</p>
-                      </div>
+                    <div class='row justify-content-center m-3'>
+                      <h4 class="text-white text-center mb-4">Synopsis</h4>
+                        <div class='text-white'>
+                          <p class="p-3 contbox">${synopsis}</p>
+                        </div>
                     </div>
                 </div>
               </div>`
