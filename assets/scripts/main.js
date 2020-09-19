@@ -141,7 +141,7 @@ $(function () {
         $('#f-results-pg').html(movieTemplate);
 
         $('#films-loader').hide();
-        $('#f-results-pg')[0].scrollIntoView(false);
+        $('#f-results-pg')[0].scrollIntoView();
 
       })
       .catch(function (error) {
@@ -291,7 +291,7 @@ $(function () {
 
           $('#characters-loader').hide();
 
-          $('#c-results-pg')[0].scrollIntoView(false);
+          $('#c-results-pg')[0].scrollIntoView();
 
         })
         .catch(function (error) {
@@ -387,7 +387,7 @@ $(function () {
 
 
         $('#books-loader').hide();
-        $('#book-marker')[0].scrollIntoView(false);
+        $('#book-marker')[0].scrollIntoView();
 
       })
       .catch(function (error) {
