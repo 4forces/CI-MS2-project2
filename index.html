@@ -71,16 +71,15 @@
                     <h2 class="text-white mt-0">Films</h2>
                         <p class="text-white-50 mb-4"><b>Select a film</b></p>
                         <hr class="divider light my-4" />
-
-                        <select id="film-search">
-                            <option value="tt0903624">An Unexpected Journey</option>
-                            <option value="tt1170358">The Desolation of Smaug</option>
-                            <option value="tt2310332">The Battle of the Five Armies</option>
-                            <option value="tt0120737">The Fellowship Of The Ring</option>
-                            <option value="tt0167261">The Two Towers</option>
-                            <option value="tt0167260">The Return Of The King</option>
-                        </select><br>
-                    <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button><br>
+                            <select class="form-control" id="film-search">
+                                <option value="tt0903624">An Unexpected Journey</option>
+                                <option value="tt1170358">The Desolation of Smaug</option>
+                                <option value="tt2310332">The Battle of the Five Armies</option>
+                                <option value="tt0120737">The Fellowship Of The Ring</option>
+                                <option value="tt0167261">The Two Towers</option>
+                                <option value="tt0167260">The Return Of The King</option>
+                            </select><br>
+                            <button class="btn btn-light btn-xl js-scroll-trigger" id="film-btn">Go!</button><br>
                     <div id="films-loader" class="spinner-grow text-secondary" role="status" style="display:none;">
                         <span class="sr-only"></span>
                     </div>
