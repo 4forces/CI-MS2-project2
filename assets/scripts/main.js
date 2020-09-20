@@ -253,6 +253,8 @@ $(function () {
       })
       .catch(function (error) {
         console.log(error);
+        $('#characters-loader').hide();
+        alert("Character name not found. Please key in EXACT and FULL character name. E.g Aragorn II Elessar or Gandalf");
       }) //end of axios request part 1 (character bio)
 
 

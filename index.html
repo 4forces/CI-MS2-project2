@@ -13,7 +13,7 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="assets/styles/main.css" />
 
-    <title>LOTR</title>
+    <title>LOTR One Site</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -98,8 +98,10 @@
                     <h2 class=text-white mt-0> Characters </h2> <!-- heroku app-->
                     <p class="text-white-50 mb-4"><b>Enter a name e.g Gandalf, Gimli, Legolas</b></p>
                     <hr class="divider light my-4" />
-                    <input type='text' id='char-search' class="form-control" placeholder='e.g Gandalf'><br>
-                    <button class="btn btn-light btn-xl" id="char-btn">Go!</button><br>
+                    <form>
+                        <input type='text' id='char-search' class="form-control" placeholder='e.g Gandalf' required><br>
+                        <button class="btn btn-light btn-xl" id="char-btn">Go!</button><br>
+                    </form>
                     <div id="characters-loader" class="spinner-grow text-secondary" role="status" style="display:none;">
                         <span class="sr-only"></span>
                     </div>
