@@ -8,8 +8,8 @@ This site was conceptualised from the perspective of a _Lord of the Rings_ fan. 
 
 #### Objective
 This site offers itself as a key information center for most if not all things related to the Lord of the Rings. Users will be able to quickly retrieve information with regards to the films, characters and books. It is hoped that any one who visits this site can savour a bit of the grandeur of this aweseome series!
-
 ***
+
 ## UX and UI
 The ideal user for this site will be someone who enjoys the Lord of the Rings very much, and wishes to quickly obtain information about the films, characters or books. Anyone who has a general in the Lord of the Rings series should also be able to appreciate the information this site can provide.
 The developer made efforts to source for images that will convey the rich background and storyline of this immensely popular series, especially if one has watched the films.
@@ -39,8 +39,8 @@ Process:
 initial idea to use 3 apis: lotr heroku, omdb,
 
 random length, issue of hitting max length.
-
 ***
+
 ## Features
 ### Existing Features
 #### Landing Page
@@ -53,13 +53,18 @@ random length, issue of hitting max length.
 #### Characters Page
 #### Books Page
 ***
+
 ## Technologies Used
 ***
+
 ## Testing
 ### Issues and Bugs
 1. form validation not present. form validation capital letter on restdb
 2. Scrollspy: Unable to align the page nicely upon click
 3. Update of navbar heading sometimes not accurate, especially when scrolling fast
+4. some of the bookimages appear stretched.
+5.
+***
 
 ## Deployment
 This site was largely developed using [VS Code](https://code.visualstudio.com/), and pushed to GitHub from VS Code. [Gitpod](https://gitpod.io/workspaces/) was initially used during the initial stages of development.
@@ -81,20 +86,10 @@ The steps used to deploy this project is be divided into two parts:
 4. Click "Save", and the website will be deployed.
 5. Scroll down to "GitHub Pages" section again, where the deployed link can be retrieved.
 6. This project can be accessed at the deployed link [here](https://4forces.github.io/CI-MS2-project2/).
-
-
+***
 
 ## Credits
-#### Content
-#### Code
-
-## Acknowledgements
-
-
-### Disclaimer
-
-For education purposes only
-
+#### Images
 __Images:__
 https://www.gamespot.com/gallery/amazons-lord-of-the-rings-tv-show-everything-we-kn/2900-3493/#6
 https://hipwallpaper.com/one-ring-to-rule-them-all-wallpapers/
@@ -128,3 +123,19 @@ __Scripts:__
 3.
 
 __APIs__
+
+#### API
+#### Code
+
+#### Care
+
+
+## Acknowledgements
+**Malcolm Yam** for being the ever so encouraging and supportive, "tough-loving guru".
+**Arif Rawi** for enthusiastically sharing what he knows (and passionately finding out what he doesn't).
+**Collin Wu** for the 100vh inspiration, and the generous suggestions for  improvements and learning.
+***
+
+### Disclaimer
+For education purposes only
+
