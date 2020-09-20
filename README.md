@@ -159,43 +159,72 @@ The manual test steps are as follows:
 
 #### Landing Page and Navbar
 **1. Click on "LET'S GO!" button**
+
 Expected result: Page scrolls to Films selection section.
+
 **2. Click on "Films", "Characters" or "Books" on the navbar**
+
 Expected result: Page scrolls to Films the respective sections.
+
 **3. Click on "The Lord of the Rings" on the navbar**
+
 Expected result: Page scrolls back to landing page.
+
 **4. Scroll the page down to "Films", "Characters" and "Books" sections.**
+
 Expected result: The "Films", "Characters" and "Books" on the navbar light up when respective section is in viewport.
 
 #### Films Page
 **Select a film and press the "GO!" button**
+
 Expected results:
+
 (a) Glowing spinner appears while retrieving data and generating results page
+
 (b) A new page with the film info is generated
+
 (c) Glowing spinner disappears
+
 (d) View port auto scrolls to the newly generated page
+
 
 #### Character Search Page
 **1. Type in a character name in full and similiar casing as listed in the [list of searchable names](https://docs.google.com/spreadsheets/d/1k1FDWrv4nhs1EtJ8tgtxgK5ptsc2GxoAdIpfq1DAHos/edit?usp=sharing),  and press the "GO!" button**
+
 Expected results:
+
 (a) Glowing spinner appears while retrieving data and generating results page
+
 (b) A new page with the character info and three random consecutive quotes are generated
+
 (c) Glowing spinner disappears
+
 (d) View port auto scrolls to newly generated page
 
+
 **2. Type in something that is not listed in [list of searchable names](https://docs.google.com/spreadsheets/d/1k1FDWrv4nhs1EtJ8tgtxgK5ptsc2GxoAdIpfq1DAHos/edit?usp=sharing), or leave the search bar blank blank**
+
 Expected results:
+
 (a) Glowing spinner appears while attempting to retrieve data
+
 (b) A browser alert pops up prompting the user to enter the full name with correct casing
+
 (c) Upon clicking "ok" glowing spinner disappears
+
 (d) No data is retrieved, and hence no new page is generated due to errorneous user input
 
 #### Books Page
 **Select a book and press the "GO!" button**
+
 Expected results:
+
 (a) Glowing spinner appears while retrieving data and generating results page
+
 (b) A new page with the book info is generated
+
 (c) Glowing spinner disappears
+
 (d) View port auto scrolls to the newly generated page
 
 
