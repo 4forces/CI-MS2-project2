@@ -23,17 +23,17 @@ The site design is clean and simple, and should be straightforward to navigate.
 
 #### Wireframes
 ##### Films Page
-* [Mockup 1](https://www.google.com)
-* [Mockup 2](https://www.google.com)
-* [Mockup 3](https://www.google.com)
+* [Mockup 1: Desktop](https://www.dropbox.com/s/c3wyedi29cb5ys7/films1.jpeg?dl=0)
+* [Mockup 2: Mobile](https://www.dropbox.com/s/1b3zc9zkaqoorha/films3.jpeg?dl=0)
 ##### Characters Page
-* [Mockup 1](https://www.google.com)
-* [Mockup 2](https://www.google.com)
-* [Mockup 3](https://www.google.com)
+* [Mockup 1: Desktop - Version 2](https://www.dropbox.com/s/b8ycogwxzkrev9q/char2.PNG?dl=0)
+* [Mockup 2: Desktop - Version 1](https://www.dropbox.com/s/6avbajcvthwso0c/char1.jpg?dl=0)
+* [Mockup 3: Mobile - Version 2](https://www.dropbox.com/s/zufl470cn1dixhj/char3b.jpeg?dl=0)
+* [Mockup 3: Mobile - Version 1](https://www.dropbox.com/s/b43p4yj3dlpweho/char3a.jpeg?dl=0)
 ##### Books Page
-* [Mockup 1](https://www.google.com)
-* [Mockup 2](https://www.google.com)
-* [Mockup 3](https://www.google.com)
+* [Mockup 1: Desktop - Version 2](https://www.dropbox.com/s/r3mkngfnlxvyxkx/books2.PNG?dl=0)
+* [Mockup 2: Desktop - Version 1](https://www.dropbox.com/s/y04pf1m5caghqqw/books1.jpeg?dl=0)
+* [Mockup 3: Mobile](https://www.dropbox.com/s/ny27nhw9q2f04r4/books3.jpeg?dl=0)
 
 Process:
 initial idea to use 3 apis: lotr heroku, omdb,
@@ -55,9 +55,31 @@ random length, issue of hitting max length.
 ***
 
 ## Technologies Used
+This project uses JavaScript, HTML and CSS.
+VS Code
+Bootstrap CDN
+jQuery
+Popper.js
+External images are stored and linked from [Dropbox]().
+Google Chrome Developer Tools
+Am I Responsive
+Screen to Gif
+Favicon Generator https://favicon.io/favicon-converter/
+
+restdb
+OMDB
+heroku app
+OpenLibrary
+
+
+W3C HTML Validation
+W3C CSS Validation
+ESLint
+
 ***
 
 ## Testing
+### Landing Page
 ### Issues and Bugs
 1. form validation not present. form validation capital letter on restdb
 2. Scrollspy: Unable to align the page nicely upon click
@@ -89,6 +111,10 @@ The steps used to deploy this project is be divided into two parts:
 ***
 
 ## Credits
+Readme reference
+Jim Morel ([GitHub profile](https://#))
+[Anna Greaves Readme](https://raw.githubusercontent.com/AJGreaves/portrait-artist/master/README.md)
+
 #### Images
 __Images:__
 https://www.gamespot.com/gallery/amazons-lord-of-the-rings-tv-show-everything-we-kn/2900-3493/#6
@@ -117,6 +143,7 @@ https://wall.alphacoders.com/tags.php?tid=373
 
 __Fonts and Icons:__
 
+
 __Scripts:__
 1. Bootstrap 4.0
 2. Bootstrap template
@@ -135,6 +162,7 @@ __APIs__
 **Arif Rawi** for enthusiastically sharing what he knows (and passionately finding out what he doesn't).
 **Collin Wu** for the 100vh inspiration, and the generous suggestions for  improvements and learning.
 ***
+W3C schools
 
 ### Disclaimer
 For education purposes only
