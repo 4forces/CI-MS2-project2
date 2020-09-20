@@ -41,7 +41,6 @@ $(function () {
         let rated = response.data.Rated;
         let released = response.data.Released;
         let runtime = response.data.Runtime;
-        let genre = response.data.Genre;
         let director = response.data.Director;
         let writer = response.data.Writer;
         let actors = response.data.Actors;
@@ -136,7 +135,7 @@ $(function () {
                   </div>
                 </div>
 
-              </div>`
+              </div>`;
 
         $('#f-results-pg').html(movieTemplate);
 
@@ -146,7 +145,7 @@ $(function () {
       })
       .catch(function (error) {
         console.log(error);
-      })// end of axios request for film details
+      });// end of axios request for film details
 
   }); //closing for   $('#film-btn').on('click', function () {
 
@@ -178,7 +177,7 @@ $(function () {
         }
       })
       .then(function (response) {
-        console.log(response.data[0])
+        console.log(response.data[0]);
         let race = response.data[0].race;
         let gender = response.data[0].gender;
         let birthDate = response.data[0].birth;
@@ -242,9 +241,8 @@ $(function () {
                       </tbody>
                     </table>
                   </div>
-                </div>
+                </div>`;
 
-                `
         $('#c-results-pg').html(charTemplate);
 
         // character info part 2 (getQuote) function call
@@ -255,7 +253,7 @@ $(function () {
         console.log(error);
         $('#characters-loader').hide();
         alert("Character name not found. Please key in EXACT and FULL character name. E.g Aragorn II Elessar or Gandalf");
-      }) //end of axios request part 1 (character bio)
+      }); //end of axios request part 1 (character bio)
 
 
 
@@ -298,7 +296,7 @@ $(function () {
         })
         .catch(function (error) {
           console.log(error);
-        })
+        });
     }// end of getQuote() function / end of character quotes axios request
 
   }); // end of $('#char-btn').on('click', function () {
@@ -320,7 +318,7 @@ $(function () {
 
     $('#books-loader').show();
 
-    console.log('book cover value selected: ' + bookVal)
+    console.log('book cover value selected: ' + bookVal);
 
     //axios request for book details to restdb
     axios({
@@ -380,7 +378,7 @@ $(function () {
                         </div>
                     </div>
                 </div>
-              </div>`
+              </div>`;
 
         $('#b-results-pg').html(bookTemplate);
 
@@ -391,7 +389,7 @@ $(function () {
       })
       .catch(function (error) {
         console.log(error);
-      }) // end of axios request for book details
+      }); // end of axios request for book details
 
   }); // end of $('#book-btn').on('click', function () {
 
