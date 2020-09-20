@@ -281,8 +281,10 @@ https://shadowofwar.fandom.com/wiki/Mordor?file=Yre1o.jpg
 https://wallpapercave.com/w/wp1861654
 https://wall.alphacoders.com/tags.php?tid=373
 
+#### Layout
+* Landing page look and layout, buttons from [Start Bootstrap](https://startbootstrap.com/themes/creative/)
 
-### Acknowledgements
+#### Acknowledgements
 **Malcolm Yam** for being the ever so encouraging and supportive, "tough-loving guru".
 **Arif Rawi** for enthusiastically sharing what he knows (and passionately finding out what he doesn't).
 **Collin Wu** for the 100vh inspiration, and the generous suggestions for  improvements and learning.
