@@ -1,5 +1,5 @@
 # The Lord of the Rings – _One Site to Find Them All_
-![Preview:]https://github.com/4forces/CI-MS2-project2/blob/master/assets/img/preview.gif)
+![Preview:]（https://github.com/4forces/CI-MS2-project2/blob/master/assets/img/preview.gif)
 ***
 
 ## Overview
