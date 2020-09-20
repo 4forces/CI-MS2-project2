@@ -18,8 +18,8 @@ The site design is clean and simple, and should be straightforward to navigate.
 #### User Stories
 1. "I want to find some quick information on the Lord of the Rings movies, such as its director, cast, and movie ratings." – _LOTR film buff._
 2. "I'm interested to retrieve some key information on the characters. For example race and date-of-birth." _– Someone who wants to know the characters better._
-3. "What are some random quotes uttered by the characters in the movies?" _– Curious user._
-4. "What are the books related to the LOTRs?" _– LOTR Bookworm_
+3. "What are some random quotes uttered by the characters in the movies?" _– A curious user._
+4. "What are the books related to the LOTRs?" _– LOTR Bookworm._
 
 #### Wireframes
 ##### Films Page
@@ -42,16 +42,81 @@ random length, issue of hitting max length.
 ***
 
 ## Features
-### Existing Features
 #### Landing Page
+This page is designed to look like an entry point from this world into the rich world of Middle-earth. It is left uncluttered and simple, with just a map of Middle-earth and the infamous One Ring encircling the map. Click on "LET'S GO!" to enter the fantasy realm of the Lord of the Rings, beginning with the _Films_ page.
+
+The user may also directly click on the __"Films"__, __"Characters"__ and __"Books"__ buttons on the navbar to directly go to each section.
+
 #### Films Page
-#### Characters Page
+The menacing darklord Sauron welcomes the user here. The user may select any of the six movies of the series from the dropdown list and press "GO!".
+
+He or she will be brought to a freshly generated page with information on the selected film. The film's poster and ratings are also displayed. The API used in this section is [OMDb API](http://www.omdbapi.com/).
+
+The background image of the results page depicts the intense battle between Gandalf the Grey and Durin's Bane at the Bridge of Khazad-dûm. Anyone who has watched _The Fellowship of the Ring_ should be able to clearly remember the intensity of this scene.
+
+#### Characters Search Page
+Upon reaching this page, the user is met with a scene of the original Fellowship of the Ring on their journey. When the search result page appears, its backdrop shows Gandalf, Bilbo and Thorin and his company of 13 dwarves on their travels.
+
+Upon inputting a character name from the series and clicking "GO!", character bio-data such as *race*, *gender*, *birthdate*, *date of death* are retrieved via the API. An external *Wiki URL* is also provided if the user wishes to read up more on the character.
+
+This is followed with a sample of 3 quotes of the same character from the films. The list of searchable characters are listed [here](https://docs.google.com/spreadsheets/d/1k1FDWrv4nhs1EtJ8tgtxgK5ptsc2GxoAdIpfq1DAHos/edit?usp=sharing). A for-loop was written to randomly select and display three quotes retrieved from the API. A sample of the for loop can be found in the section [below](#Additional-notes-on-development-of-site-Features) on additional development notes.
+
+[Restdb.io API](https://restdb.io/) was utilised for this section.
+
 #### Books Page
+The books selection page has a richly coloured background taken from _The Hobbit Trilogy_ films. The user may select any of the books he or she is interested, click "GO!" and the information (_Author, First Published, Description and Synopsis_) on the selected book will be displayed on a fresh page. The dragon Smaug sends his greetings from the background of this page.
+
+
+### Additional notes on development of site Features
+
+#### Character Search Feature
+Intially this developer planned to use the [Lord of the Rings API](https://the-one-api.dev/) for the __character search__ feature, as well as most of the other features on this site. However, midway through the development of this project. The API was updated to a newer version, and previously workable GET requests ceased to function.
+
+A workaround was devised, in which character bio-data and character quotes were exported from the API and uploaded to [restdb.io](https://restdb.io/). Moving forward, GET requests for character search was all directed to the restdb API.
+
+Due to limitation of the free development plan the developer uses on restdb.io, only 2,500 records are allowed. Therefore a secondary database had to be created to accomodate data of both the _character bio_ and _character quotes_.
+
+The developer wrote a code to randomly generate three quotes and display to html. The code block is extracted and appended here:
+
+```javascript
+//used in for loop to randomly generate 3 quotes from list of character quotes
+let lgth = response.data.length;
+
+// set to (lgth - 3) to avoid randomly selecting the last 3 quotes
+let maxLgth = lgth - 3;
+
+//random function to return a random quote (from the list of character quotes)
+let randomLgth = Math.floor((Math.random() * maxLgth));
+console.log('randomLgth= ' + lgth);
+
+for (let i = randomLgth; i < randomLgth + 3; i++) {
+    console.log('i= ' + i);
+    let quote = response.data[i].dialog;
+    let qMovie = response.data[i].movie;
+    $('#quote-lst').append(`<li>"${quote}"</li>`);
+    $('#quote-lst').append(`<li><em> - ${qMovie}</em></li><br>`);
+```
+
+#### Books Feature
+The initial choice to obtain books information was via GET requests from [Open Library Books API](https://openlibrary.org/dev/docs/api/books). However, upon testing, it was discovered that data returned from the API was not consistent. For example, "date-published" was in different paths in the JSON retrieved. Hence it was decided to set up a database on restdb.io, and proceed with the work on implementing this feature.
+***
+
 ### Future implementations
-#### Landing Page
-#### Films Page
-#### Characters Page
-#### Books Page
+**1. Changing the background image everytime this site is loaded, or when a button is clicked**
+   *- This developer thouroughly enjoyed playing around with JavaScript and playing around with JavaScript, and believes this is definitely doable.*
+
+**2. Implementing fuzzy search (for example [Fuse.js](https://fusejs.io/)) to the character search**
+    *- Current search limits to strict matching of the character name casing. For example searching for "gandalf" returns no results. Only "Gandalf" with a capital "G" gives results.*
+
+**3. Returning three totally random quotes when a character is searched**
+*- At the moment only three consecutive quotes are returned due to the use of a for loop.*
+
+**4. Adding a "Back" button on the results page for each section.**
+*- The user may still click on the "Films", "Characters" or "Books" button on the Navbar to go to any section they want. But this will be a nice touch, especially if the user still wish to remain in the same section.*
+
+**4. Writing a code to break up the long paragraphs in _synopsis_ or _description_ of the books results page.**
+*- Some books have long description and synopsis that do not look viewer friendly, espcially on mobile.*
+
 ***
 
 ## Technologies Used
@@ -65,7 +130,9 @@ Google Chrome Developer Tools
 Am I Responsive
 Screen to Gif
 Favicon Generator https://favicon.io/favicon-converter/
-
+[Postman](https://www.postman.com/)
+[JSONView](https://github.com/gildas-lormeau/JSONView-for-Chrome)
+[JSON Path Finder](https://jsonpathfinder.com/)
 restdb
 OMDB
 heroku app
@@ -84,8 +151,8 @@ ESLint
 1. form validation not present. form validation capital letter on restdb
 2. Scrollspy: Unable to align the page nicely upon click
 3. Update of navbar heading sometimes not accurate, especially when scrolling fast
-4. some of the bookimages appear stretched.
-5.
+4. some of the book images appear stretched upon adding
+5. blue "LET'S GO!" button
 ***
 
 ## Deployment
@@ -164,6 +231,5 @@ __APIs__
 ***
 W3C schools
 
-### Disclaimer
 For education purposes only
 

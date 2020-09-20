@@ -67,7 +67,7 @@ $(function () {
 
                 <div id='movie-details' class='row justify-content-center'>
                     <div class='col-lg-3 justify-content-center d-flex'>
-                      <img src="${poster}" class="img-fluid img-thumbnail mb-3 img-thumb">
+                      <img src="${poster}" alt="Film Poster" class="img-fluid img-thumbnail mb-3 img-thumb">
                     </div>
 
                     <div class='col-lg-9'>
@@ -349,7 +349,7 @@ $(function () {
                   <!-- Books covers are retrieved from OpenLibrary -->
                   <div class='row justify-content-center'>
                     <div class='col-lg-3 justify-content-center d-flex'>
-                      <img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg" class="img-fluid img-thumbnail mb-3 img-thumb">
+                      <img src="http://covers.openlibrary.org/b/isbn/${bookVal}-M.jpg" alt="Bookcover thumbnail" class="img-fluid img-thumbnail mb-3 img-thumb">
                     </div>
 
                     <div class='col-lg-9'>
